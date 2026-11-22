@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>rrpg-config</AssemblyName>
+    <RootNamespace>RRPG.ConfigCompiler</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+  </PropertyGroup>
+
+  <!--
+    Production V0.1（FDS §5.1）：.NET CLI + ClosedXML + OpenXML SDK。
+    版本在此显式锁定（不使用 Central Package Management，避免与 Unity 工程的
+    *.csproj 规则互相影响）；传递依赖由 packages.lock.json 固化 + locked restore。
+
+    System.IO.Packaging 8.0.1 = 安全钉版（DocumentFormat.OpenXml 3.1.1 默认拉 8.0.0，
+    该版本有已知高危公告 GHSA-f32c-w444-8ppv / GHSA-qj66-m88j-hmgj）。
+    首次 dotnet restore 可能需要 NuGet 网络；正常 validate / build 不访问网络。
+  -->
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.1" />
+    <PackageReference Include="System.IO.Packaging" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>

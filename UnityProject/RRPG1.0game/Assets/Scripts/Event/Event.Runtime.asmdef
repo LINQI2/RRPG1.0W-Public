@@ -1,0 +1,17 @@
+{
+    "name": "Event.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "StaticConfig.Runtime",
+        "RRPG.Deterministic.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

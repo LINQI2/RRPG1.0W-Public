@@ -1,0 +1,17 @@
+{
+    "name": "Growth.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine",
+        "BattleStage1.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Profession.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine",
+        "Growth.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

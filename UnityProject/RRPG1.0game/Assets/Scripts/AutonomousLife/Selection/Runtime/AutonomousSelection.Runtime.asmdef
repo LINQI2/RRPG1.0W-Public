@@ -1,0 +1,1 @@
+{"name":"AutonomousSelection.Runtime","references":["AutonomousActivity.Runtime","RRPG.Deterministic.Runtime"],"autoReferenced":true,"noEngineReferences":true}

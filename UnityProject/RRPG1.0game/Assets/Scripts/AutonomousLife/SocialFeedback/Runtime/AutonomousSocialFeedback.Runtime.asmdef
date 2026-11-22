@@ -1,0 +1,7 @@
+{
+  "name": "AutonomousSocialFeedback.Runtime",
+  "rootNamespace": "RRPG.AutonomousSocialFeedback",
+  "references": ["AutonomousActivity.Runtime", "Social.Runtime"],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}

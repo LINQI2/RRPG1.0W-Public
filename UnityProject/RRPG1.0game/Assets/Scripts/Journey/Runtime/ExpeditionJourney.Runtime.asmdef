@@ -1,0 +1,16 @@
+{
+    "name": "ExpeditionJourney.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "UnityEngine"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
