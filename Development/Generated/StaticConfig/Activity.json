@@ -1,0 +1,70 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "d714e70345fd3ae85c45aeb95e7073e6001e97881cc5b0a2e44ef57822652964",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "Activity",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ActivityType"
+  ],
+  "columns": [
+    {
+      "field": "ActivityType",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "BaseDesire",
+      "type": "float",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 5,
+  "rows": [
+    {
+      "ActivityType": "Drink",
+      "BaseDesire": 28,
+      "DisplayName": "饮酒"
+    },
+    {
+      "ActivityType": "Help",
+      "BaseDesire": 18,
+      "DisplayName": "帮助"
+    },
+    {
+      "ActivityType": "Rest",
+      "BaseDesire": 22,
+      "DisplayName": "休息"
+    },
+    {
+      "ActivityType": "Talk",
+      "BaseDesire": 30,
+      "DisplayName": "交谈"
+    },
+    {
+      "ActivityType": "VisitSick",
+      "BaseDesire": 18,
+      "DisplayName": "探望伤员"
+    }
+  ]
+}

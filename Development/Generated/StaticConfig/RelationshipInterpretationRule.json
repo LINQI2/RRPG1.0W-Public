@@ -1,0 +1,97 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "5754f246e06ee427babf92c774542ac5747459cd5d3734f7643573cfc988b94f",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Social.xlsx",
+    "sheet": "RelationshipInterpretationRule",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "RuleId"
+  ],
+  "columns": [
+    {
+      "field": "FactType",
+      "type": "ref:RelationalFactType",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Polarity",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Positive|Negative"
+      ]
+    },
+    {
+      "field": "RelationshipChannel",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Affinity"
+      ]
+    },
+    {
+      "field": "RuleId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "SourceRole",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Actor|Target"
+      ]
+    },
+    {
+      "field": "Strength",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Weak|Medium|Strong"
+      ]
+    },
+    {
+      "field": "TargetRole",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Actor|Target"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "FactType": "relational.helped_person",
+      "Polarity": "Positive",
+      "RelationshipChannel": "Affinity",
+      "RuleId": "helped_affinity",
+      "SourceRole": "Target",
+      "Strength": "Medium",
+      "TargetRole": "Actor"
+    },
+    {
+      "FactType": "relational.visited_sick_person",
+      "Polarity": "Positive",
+      "RelationshipChannel": "Affinity",
+      "RuleId": "visited_sick_affinity",
+      "SourceRole": "Target",
+      "Strength": "Medium",
+      "TargetRole": "Actor"
+    }
+  ]
+}

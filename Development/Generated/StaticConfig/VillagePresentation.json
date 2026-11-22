@@ -1,0 +1,99 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "b4a7e86bcd490478d4203da3731646c51e96151173b7bf964eaff247f1d976e4",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_VillagePresentation.xlsx",
+    "sheet": "VillagePresentation",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "PresentationKey"
+  ],
+  "columns": [
+    {
+      "field": "PresentationKey",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "VisualAssetId",
+      "type": "ref:VisualAsset",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 15,
+  "rows": [
+    {
+      "PresentationKey": "village.building.farm.basic",
+      "VisualAssetId": "va_village_farm_basic"
+    },
+    {
+      "PresentationKey": "village.building.farm.construction",
+      "VisualAssetId": "va_village_farm_basic"
+    },
+    {
+      "PresentationKey": "village.building.neutral",
+      "VisualAssetId": "va_village_neutral_marker"
+    },
+    {
+      "PresentationKey": "village.building.r2.building_farm",
+      "VisualAssetId": "va_village_r2_farm"
+    },
+    {
+      "PresentationKey": "village.building.r2.building_house",
+      "VisualAssetId": "va_village_r2_home"
+    },
+    {
+      "PresentationKey": "village.building.r2.building_kitchen",
+      "VisualAssetId": "va_village_r2_kitchen"
+    },
+    {
+      "PresentationKey": "village.building.r2.building_workshop",
+      "VisualAssetId": "va_village_r2_workshop"
+    },
+    {
+      "PresentationKey": "village.person.r2",
+      "VisualAssetId": "va_village_r2_person"
+    },
+    {
+      "PresentationKey": "village.place.r2.ActiveProject",
+      "VisualAssetId": "va_village_r2_workshop"
+    },
+    {
+      "PresentationKey": "village.place.r2.ActivityPlace",
+      "VisualAssetId": "va_village_r2_workshop"
+    },
+    {
+      "PresentationKey": "village.place.r2.Commons",
+      "VisualAssetId": "va_village_r2_workshop"
+    },
+    {
+      "PresentationKey": "village.place.r2.Construction",
+      "VisualAssetId": "va_village_r2_workshop"
+    },
+    {
+      "PresentationKey": "village.place.r2.Home",
+      "VisualAssetId": "va_village_r2_home"
+    },
+    {
+      "PresentationKey": "village.place.r2.ProjectSite",
+      "VisualAssetId": "va_village_r2_workshop"
+    },
+    {
+      "PresentationKey": "village.place.r2.Workplace",
+      "VisualAssetId": "va_village_r2_farm"
+    }
+  ]
+}

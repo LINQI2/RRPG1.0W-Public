@@ -1,0 +1,51 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "772763aca8b8fbfd1f3a7aa856d2822eb8bc12a77a040a8ddbb306a00f98c48d",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "Place",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "PlaceId"
+  ],
+  "columns": [
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "PlaceId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    }
+  ],
+  "rowCount": 3,
+  "rows": [
+    {
+      "DisplayName": "住所（原型）",
+      "PlaceId": "Home"
+    },
+    {
+      "DisplayName": "酒馆（原型）",
+      "PlaceId": "Tavern"
+    },
+    {
+      "DisplayName": "工作场所（原型）",
+      "PlaceId": "Workshop"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "6ec9b4c2b7f11ceaa1ca58970c84ccf1efc3e1140f0e83391c806659c0c4d953",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventRole",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "RoleId"
+  ],
+  "columns": [
+    {
+      "field": "EventId",
+      "type": "ref:Event",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "FixedPersonId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "RoleId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "RoleName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "SelectorType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=ContextPerson|VillagePerson|ExpeditionPartyMember|FixedPerson"
+      ]
+    },
+    {
+      "field": "SourceKey",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "EventId": "evt_test_exp_ruined_shrine",
+      "FixedPersonId": null,
+      "RoleId": "role_test_exp_scout",
+      "RoleName": "侦察者",
+      "SelectorType": "ExpeditionPartyMember",
+      "SourceKey": null
+    },
+    {
+      "EventId": "evt_test_village_temp_draft",
+      "FixedPersonId": null,
+      "RoleId": "role_test_village_requester",
+      "RoleName": "当事人",
+      "SelectorType": "ContextPerson",
+      "SourceKey": "RecognitionPerson"
+    }
+  ]
+}

@@ -8,6 +8,11 @@ using UnityEngine.UI;
 public sealed class HomeProductShell : MonoBehaviour
 {
     public HomeProductRouter Router { get; }=new HomeProductRouter();
+    public PersonDetailView PersonDetail { get; private set; }
+    public CharacterGrowthUI GrowthUI => FindObjectOfType<CharacterGrowthUI>(true);
+    public bool IsPersonModalOpen => Router.Surface==HomeSurface.Person || GrowthUI?.IsOpen==true;
+    private CanvasGroup _townInput;
+    private bool _townBlocked,_oldTownInteractable,_oldTownRaycasts;
     public HomeVillageFeed Feed { get; private set; }
     public HomeBuildingPlacement Build { get; private set; }
     public IReadOnlyList<HomeAttentionItem> Attention { get; private set; }
@@ -62,6 +67,11 @@ public sealed class HomeProductShell : MonoBehaviour
         _surfaceBody=HomeProductUI.Text(_surface.transform,"WhiteboxContent",new Vector2(0,1),new Vector2(24,-95),new Vector2(572,540),"",22);
         _surface.SetActive(false);
         Build=gameObject.AddComponent<HomeBuildingPlacement>();Build.Initialize(host);
+        var authored=Resources.Load<PersonDetailView>("UI/PersonDetailView");
+        if(authored==null) { Debug.LogError("[PersonDetail] Missing authored UI/PersonDetailView prefab."); return; }
+        PersonDetail=Instantiate(authored,transform);PersonDetail.name="PersonDetail";
+        var personRect=PersonDetail.GetComponent<RectTransform>();personRect.localScale=Vector3.one;personRect.anchorMin=Vector2.zero;personRect.anchorMax=Vector2.one;personRect.sizeDelta=Vector2.zero;personRect.anchoredPosition=Vector2.zero;
+        PersonDetail.Initialize(host,this);
     }
     private void LateUpdate()
     {
@@ -70,7 +80,7 @@ public sealed class HomeProductShell : MonoBehaviour
         _canvas.enabled=_host.WorldVisible && VillageRuntimeBridge.IsSimulationActive;
         RetirePrototype();
         if(!ShellVisible) return;
-        if(Input.GetKeyDown(KeyCode.Escape) && !Build.IsOpen) CloseSurface();
+        if(Input.GetKeyDown(KeyCode.Escape)) HandleEscape();
         if(Time.unscaledTime>=_nextRead) { _nextRead=Time.unscaledTime+.2f;RefreshNow(); }
     }
     private void RetirePrototype()
@@ -86,7 +96,7 @@ public sealed class HomeProductShell : MonoBehaviour
     {
         transform.Find("R2VisualProfile").GetComponentInChildren<TMP_Text>().text=_host.VisualPrototypeEnabled ? "R2 对照：B 原型" : "R2 对照：A 白模";
         if(!ReferenceEquals(_source,VillageRuntimeBridge.SimulationPersonSource))
-        { _source=VillageRuntimeBridge.SimulationPersonSource;Feed.ResetSession();Router.Close();_attentionPanel.SetActive(false); }
+        { _source=VillageRuntimeBridge.SimulationPersonSource;Feed.ResetSession();Router.Close();_attentionPanel.SetActive(false); var growth=GrowthUI; if(growth!=null && growth.IsOpen && !growth.HasPendingChoice) growth.TryHide(); }
         Attention=HomeAttentionProjection.Read();
         var clock=VillageRuntimeBridge.Time;var resources=VillageRuntimeBridge.Resources;
         _date.text=clock==null ? "—" : $"{clock.Year}年 {clock.Month}月 {clock.Day}日   {clock.MinuteOfDay/60:00}:{clock.MinuteOfDay%60:00}";
@@ -98,19 +108,42 @@ public sealed class HomeProductShell : MonoBehaviour
         _feed.text=string.Join("\n",Feed.Recent.Select(e=>"· "+e.Message));
         var subjects=new HashSet<string>(Attention.Where(a=>a.Intent==HomeAttentionIntent.PersonGrowth).Select(a=>a.SubjectId));
         foreach(var view in _host.PersonViews) view.Value.SetAttention(subjects.Contains(view.Key));
-        _surface.SetActive(Router.Surface!=HomeSurface.World);
+        _surface.SetActive(Router.Surface!=HomeSurface.World && Router.Surface!=HomeSurface.Person);
+        if(PersonDetail!=null) { PersonDetail.gameObject.SetActive(Router.Surface==HomeSurface.Person && ShellVisible); if(PersonDetail.IsVisible) PersonDetail.RefreshNow(); }
+        SetTownInputBlocked(IsPersonModalOpen && ShellVisible);
+        _attentionButton.interactable=!IsPersonModalOpen;
+        if(IsPersonModalOpen) _attentionPanel.SetActive(false);
         _host.Inspector.SetVisible(_host.WorldVisible && Router.Surface==HomeSurface.World);
         foreach(var pair in _navigation.Select((button,index)=>new{button,index}))
             pair.button.GetComponent<Image>().color=(int)Router.Surface==pair.index ? new Color(.28f,.43f,.36f,.96f) : new Color(.14f,.24f,.24f,.94f);
         RefreshSurface();
     }
-    public void OpenSurface(HomeSurface surface) { Build?.Cancel();Router.Open(surface);RefreshNow(); }
-    public void CloseSurface() { Router.Close();RefreshNow(); }
+    public void OpenSurface(HomeSurface surface)
+    {
+        if(GrowthUI?.HasPendingChoice==true) { GrowthUI.TryHide();return; }
+        if(GrowthUI?.IsOpen==true) { GrowthUI.TryHide(); }
+        Build?.Cancel();Router.Open(surface);RefreshNow();
+    }
+    public void HandleEscape() { if(!Build.IsOpen) CloseSurface(); }
+    public void CloseSurface()
+    {
+        var growth=GrowthUI;
+        if(growth?.IsOpen==true && !growth.TryHide())return;
+        Router.Close();RefreshNow();
+    }
+    private void SetTownInputBlocked(bool blocked)
+    {
+        if(_town?.canvasRoot==null)return;
+        if(_townInput==null) { _townInput=_town.canvasRoot.GetComponent<CanvasGroup>(); if(_townInput==null) _townInput=_town.canvasRoot.AddComponent<CanvasGroup>(); }
+        if(blocked && !_townBlocked) { _oldTownInteractable=_townInput.interactable;_oldTownRaycasts=_townInput.blocksRaycasts;_townInput.interactable=false;_townInput.blocksRaycasts=false;_townBlocked=true; }
+        else if(!blocked && _townBlocked) { _townInput.interactable=_oldTownInteractable;_townInput.blocksRaycasts=_oldTownRaycasts;_townBlocked=false; }
+    }
     public void TogglePause()
     { var clock=VillageRuntimeBridge.Time;if(clock==null) return;if(clock.Speed==VillageTime.VillageTimeSpeed.Paused) clock.Resume();else clock.Pause();RefreshNow(); }
     public void CycleSpeed() { VillageRuntimeBridge.Time?.CycleSpeed();RefreshNow(); }
     private void Navigate(int index)
     {
+        if(IsPersonModalOpen)return;
         if(index==6) {Build.OpenCatalog();return;}
         Build.Cancel();
         if(index<=4) OpenSurface((HomeSurface)index);
@@ -123,11 +156,11 @@ public sealed class HomeProductShell : MonoBehaviour
         }
     }
     public void ToggleCompatibility()
-    { CompatibilityVisible=!CompatibilityVisible;_host.ToggleDebug();RetirePrototype(); }
+    { if(IsPersonModalOpen)return;CompatibilityVisible=!CompatibilityVisible;_host.ToggleDebug();RetirePrototype(); }
     public void NavigateAttention(HomeAttentionItem item)
     {
-        if(item==null || !Attention.Any(a=>a.SubjectId==item.SubjectId && a.Intent==item.Intent)) return;
-        if(item.Intent==HomeAttentionIntent.PersonGrowth) { _host.Selection.SelectPerson(item.Target);OpenSurface(HomeSurface.Person); }
+        if(IsPersonModalOpen || item==null || !Attention.Any(a=>a.SubjectId==item.SubjectId && a.Intent==item.Intent)) return;
+        if(item.Intent==HomeAttentionIntent.PersonGrowth) { _host.Selection.SelectPerson(item.Target);OpenSurface(HomeSurface.Person);PersonDetail?.SelectTab(PersonDetailTab.Growth); }
         else FindObjectOfType<VillageSocialEventUI>(true)?.ShowAdvancePending(item.Target);
     }
     private int _attentionCursor;
@@ -151,5 +184,5 @@ public sealed class HomeProductShell : MonoBehaviour
                 _surfaceTitle.text="历史";_surfaceBody.text=note+"编年史 / 人物档案 / 村庄历史\n\n长期历史查询页面待后续实现。\n左下近期动态仅属于当前会话。";break;
         }
     }
-    private void OnDestroy() { Feed?.Dispose(); }
+    private void OnDestroy() { SetTownInputBlocked(false);Feed?.Dispose(); }
 }

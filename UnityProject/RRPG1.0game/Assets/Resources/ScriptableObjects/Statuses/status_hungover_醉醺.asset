@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abac17040728f74bbd5b75df49c6d42, type: 3}
+  m_Name: "status_hungover_\u9189\u91BA"
+  m_EditorClassIdentifier: 
+  StatusId: status_hungover
+  Name: "\u9189\u91BA"
+  Duration: 1
+  OnExpireStatusId: 
+  Effects:
+  - EffectType: 13
+    Value: 6
+    TargetRule: 0
+    StatusId: 

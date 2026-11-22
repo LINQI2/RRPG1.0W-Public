@@ -1,0 +1,98 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "6d067e222f1b51bfa1ed7f9a0cc02982aa611f004d2dbeb90d01fa2b14fe19dd",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "ActivityContextBinding",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BindingId"
+  ],
+  "columns": [
+    {
+      "field": "ActivityType",
+      "type": "ref:Activity",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "BindingId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Direction",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=-1",
+        "<=1"
+      ]
+    },
+    {
+      "field": "Key",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Target.InjurySeverity|Target.HelpNeedSeverity"
+      ]
+    },
+    {
+      "field": "SourceDomain",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Person|TestContext"
+      ]
+    },
+    {
+      "field": "Strength",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Weak|Medium|Strong"
+      ]
+    },
+    {
+      "field": "SubjectRole",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Target"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "ActivityType": "Help",
+      "BindingId": "help.need",
+      "Direction": 1,
+      "Key": "Target.HelpNeedSeverity",
+      "SourceDomain": "TestContext",
+      "Strength": "Strong",
+      "SubjectRole": "Target"
+    },
+    {
+      "ActivityType": "VisitSick",
+      "BindingId": "visit.injury",
+      "Direction": 1,
+      "Key": "Target.InjurySeverity",
+      "SourceDomain": "Person",
+      "Strength": "Strong",
+      "SubjectRole": "Target"
+    }
+  ]
+}

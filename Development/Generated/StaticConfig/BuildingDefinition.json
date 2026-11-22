@@ -1,0 +1,89 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "e84084f6e1ff9d060135004333af64a5789c8390ba894e1ddb30e3bf4cae694f",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Buildings.xlsx",
+    "sheet": "BuildingDefinition",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BuildingDefinitionId"
+  ],
+  "columns": [
+    {
+      "field": "BuildingDefinitionId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Category",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "FootprintDepth",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "FootprintWidth",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    }
+  ],
+  "rowCount": 4,
+  "rows": [
+    {
+      "BuildingDefinitionId": "building_farm",
+      "Category": "Production",
+      "DisplayName": "农田",
+      "FootprintDepth": 2,
+      "FootprintWidth": 3
+    },
+    {
+      "BuildingDefinitionId": "building_house",
+      "Category": "Housing",
+      "DisplayName": "房屋",
+      "FootprintDepth": 2,
+      "FootprintWidth": 2
+    },
+    {
+      "BuildingDefinitionId": "building_kitchen",
+      "Category": "Production",
+      "DisplayName": "厨房",
+      "FootprintDepth": 2,
+      "FootprintWidth": 2
+    },
+    {
+      "BuildingDefinitionId": "building_workshop",
+      "Category": "Production",
+      "DisplayName": "工坊",
+      "FootprintDepth": 2,
+      "FootprintWidth": 3
+    }
+  ]
+}

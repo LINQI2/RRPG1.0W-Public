@@ -77,7 +77,7 @@ public sealed class HomeWorldInspector : MonoBehaviour
         foreach(string name in new[]{"Focus","Clear"}) _panel.transform.Find(name).GetComponent<RectTransform>().anchoredPosition=new Vector2(name=="Focus" ? 16 : 174,buildingSelected ? -442 : -302);
         DisplayedText=next; _panel.SetActive(next.Length>0);
         if(_surfaceButton!=null) _surfaceButton.gameObject.SetActive(_selection.Kind!=HomeSelectionKind.Building);
-        if(_surfaceButton!=null) _surfaceButton.GetComponentInChildren<TMP_Text>().text=_selection.Kind==HomeSelectionKind.Person ? "查看人物 · 白模" : "打开管理 · 白模";
+        if(_surfaceButton!=null) _surfaceButton.GetComponentInChildren<TMP_Text>().text=_selection.Kind==HomeSelectionKind.Person ? "查看人物详情" : "打开管理 · 白模";
         if (_text.text!=next) _text.text=next;
     }
     private void RefreshBuildingCommands(ProductHomeSnapshot snapshot,BuildingInstance b,VillageProject project)

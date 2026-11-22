@@ -1,0 +1,95 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "5bbfc3699ce14f10fe0474470091760a8f32e4ec5f45f8759a0f02f97871e393",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Monsters.xlsx",
+    "sheet": "MonsterEncounterProfile",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "MonsterId"
+  ],
+  "columns": [
+    {
+      "field": "MonsterId",
+      "type": "ref:Monster",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "RandomWeight",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "ThreatCost",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "Tier",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Normal|Elite|Boss"
+      ]
+    }
+  ],
+  "rowCount": 6,
+  "rows": [
+    {
+      "MonsterId": "mon_001",
+      "RandomWeight": 100,
+      "ThreatCost": 1,
+      "Tier": "Normal"
+    },
+    {
+      "MonsterId": "mon_002",
+      "RandomWeight": 80,
+      "ThreatCost": 2,
+      "Tier": "Normal"
+    },
+    {
+      "MonsterId": "mon_003",
+      "RandomWeight": 80,
+      "ThreatCost": 2,
+      "Tier": "Normal"
+    },
+    {
+      "MonsterId": "mon_004",
+      "RandomWeight": 40,
+      "ThreatCost": 3,
+      "Tier": "Elite"
+    },
+    {
+      "MonsterId": "mon_005",
+      "RandomWeight": 40,
+      "ThreatCost": 3,
+      "Tier": "Elite"
+    },
+    {
+      "MonsterId": "mon_006",
+      "RandomWeight": 10,
+      "ThreatCost": 5,
+      "Tier": "Boss"
+    }
+  ]
+}

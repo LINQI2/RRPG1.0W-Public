@@ -1,0 +1,8 @@
+{
+  "name": "SocialFeedback.Tests",
+  "references": ["AutonomousSocialFeedback.Runtime", "AutonomousActivity.Runtime", "Social.Runtime", "AutonomousSelection.Runtime", "StaticConfig.Runtime", "StaticConfig.Editor", "Village.Runtime"],
+  "includePlatforms": ["Editor"],
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": true
+}

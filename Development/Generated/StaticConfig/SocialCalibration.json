@@ -1,0 +1,53 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "fe5874f285e2507bc3160565e34aaafcf6c9a076981bfdb6e8064b4fc226ad55",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Social.xlsx",
+    "sheet": "SocialCalibration",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "CalibrationKey"
+  ],
+  "columns": [
+    {
+      "field": "CalibrationKey",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Value",
+      "type": "float",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    }
+  ],
+  "rowCount": 3,
+  "rows": [
+    {
+      "CalibrationKey": "AffinityDeltaMedium",
+      "Value": 8
+    },
+    {
+      "CalibrationKey": "AffinityDeltaStrong",
+      "Value": 12
+    },
+    {
+      "CalibrationKey": "AffinityDeltaWeak",
+      "Value": 4
+    }
+  ]
+}

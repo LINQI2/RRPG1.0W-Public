@@ -1,0 +1,92 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "b82855bd3c0703f9c9d7a33bfd4692a4ddd5dd839f9185579c4c76bc87dabb1b",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "ActivityRepetition",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BindingId"
+  ],
+  "columns": [
+    {
+      "field": "ActivityType",
+      "type": "ref:Activity",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "BindingId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Direction",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=-1",
+        "<=-1"
+      ]
+    },
+    {
+      "field": "Key",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=LastInitiatedType"
+      ]
+    },
+    {
+      "field": "Strength",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Weak|Medium|Strong"
+      ]
+    }
+  ],
+  "rowCount": 4,
+  "rows": [
+    {
+      "ActivityType": "Drink",
+      "BindingId": "drink.repeat",
+      "Direction": -1,
+      "Key": "LastInitiatedType",
+      "Strength": "Strong"
+    },
+    {
+      "ActivityType": "Rest",
+      "BindingId": "rest.repeat",
+      "Direction": -1,
+      "Key": "LastInitiatedType",
+      "Strength": "Weak"
+    },
+    {
+      "ActivityType": "Talk",
+      "BindingId": "talk.repeat",
+      "Direction": -1,
+      "Key": "LastInitiatedType",
+      "Strength": "Medium"
+    },
+    {
+      "ActivityType": "VisitSick",
+      "BindingId": "visit.repeat",
+      "Direction": -1,
+      "Key": "LastInitiatedType",
+      "Strength": "Weak"
+    }
+  ]
+}

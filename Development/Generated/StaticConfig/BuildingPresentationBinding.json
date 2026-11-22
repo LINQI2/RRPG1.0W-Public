@@ -1,0 +1,91 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "d7e6ca3e74ea5e1b05966f4dbef935e6e3fcb932fb549e923e1a9318261f1411",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_VillagePresentation.xlsx",
+    "sheet": "BuildingPresentationBinding",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BuildingDefinitionId",
+    "Lifecycle"
+  ],
+  "columns": [
+    {
+      "field": "BuildingDefinitionId",
+      "type": "ref:BuildingDefinition",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "Lifecycle",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key",
+        "allowed=UnderConstruction|Completed"
+      ]
+    },
+    {
+      "field": "PresentationKey",
+      "type": "ref:VillagePresentation",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 8,
+  "rows": [
+    {
+      "BuildingDefinitionId": "building_farm",
+      "Lifecycle": "Completed",
+      "PresentationKey": "village.building.farm.basic"
+    },
+    {
+      "BuildingDefinitionId": "building_farm",
+      "Lifecycle": "UnderConstruction",
+      "PresentationKey": "village.building.farm.construction"
+    },
+    {
+      "BuildingDefinitionId": "building_house",
+      "Lifecycle": "Completed",
+      "PresentationKey": "village.building.neutral"
+    },
+    {
+      "BuildingDefinitionId": "building_house",
+      "Lifecycle": "UnderConstruction",
+      "PresentationKey": "village.building.neutral"
+    },
+    {
+      "BuildingDefinitionId": "building_kitchen",
+      "Lifecycle": "Completed",
+      "PresentationKey": "village.building.neutral"
+    },
+    {
+      "BuildingDefinitionId": "building_kitchen",
+      "Lifecycle": "UnderConstruction",
+      "PresentationKey": "village.building.neutral"
+    },
+    {
+      "BuildingDefinitionId": "building_workshop",
+      "Lifecycle": "Completed",
+      "PresentationKey": "village.building.neutral"
+    },
+    {
+      "BuildingDefinitionId": "building_workshop",
+      "Lifecycle": "UnderConstruction",
+      "PresentationKey": "village.building.neutral"
+    }
+  ]
+}

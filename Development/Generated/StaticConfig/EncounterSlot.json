@@ -1,0 +1,196 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "efd3cff763a8aa36e6f09902cf2aaed492ea58927f61176e872309c6b6ce3459",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Encounters.xlsx",
+    "sheet": "EncounterSlot",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "SlotId"
+  ],
+  "columns": [
+    {
+      "field": "Column",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional",
+        "allowed=Left|Center|Right"
+      ]
+    },
+    {
+      "field": "CountMax",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    },
+    {
+      "field": "CountMin",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    },
+    {
+      "field": "EncounterId",
+      "type": "ref:Encounter",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "FixedMonsterId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "PositionMode",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Any|Row|Exact"
+      ]
+    },
+    {
+      "field": "Row",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional",
+        "allowed=Front|Middle|Back"
+      ]
+    },
+    {
+      "field": "SelectionMode",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=FixedMonster|Query"
+      ]
+    },
+    {
+      "field": "SlotId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    }
+  ],
+  "rowCount": 9,
+  "rows": [
+    {
+      "Column": null,
+      "CountMax": 2,
+      "CountMin": 0,
+      "EncounterId": "enc_test_basic",
+      "FixedMonsterId": null,
+      "PositionMode": "Row",
+      "Row": "Back",
+      "SelectionMode": "Query",
+      "SlotId": "slot_basic_back"
+    },
+    {
+      "Column": null,
+      "CountMax": 3,
+      "CountMin": 1,
+      "EncounterId": "enc_test_basic",
+      "FixedMonsterId": null,
+      "PositionMode": "Row",
+      "Row": "Front",
+      "SelectionMode": "Query",
+      "SlotId": "slot_basic_front"
+    },
+    {
+      "Column": "Center",
+      "CountMax": 1,
+      "CountMin": 1,
+      "EncounterId": "enc_test_boss",
+      "FixedMonsterId": "mon_006",
+      "PositionMode": "Exact",
+      "Row": "Front",
+      "SelectionMode": "FixedMonster",
+      "SlotId": "slot_boss_fixed"
+    },
+    {
+      "Column": null,
+      "CountMax": 4,
+      "CountMin": 1,
+      "EncounterId": "enc_test_boss",
+      "FixedMonsterId": null,
+      "PositionMode": "Any",
+      "Row": null,
+      "SelectionMode": "Query",
+      "SlotId": "slot_boss_support"
+    },
+    {
+      "Column": null,
+      "CountMax": 3,
+      "CountMin": 1,
+      "EncounterId": "enc_test_elite",
+      "FixedMonsterId": null,
+      "PositionMode": "Any",
+      "Row": null,
+      "SelectionMode": "Query",
+      "SlotId": "slot_elite_any"
+    },
+    {
+      "Column": null,
+      "CountMax": 1,
+      "CountMin": 1,
+      "EncounterId": "enc_test_elite",
+      "FixedMonsterId": null,
+      "PositionMode": "Row",
+      "Row": "Front",
+      "SelectionMode": "Query",
+      "SlotId": "slot_elite_tank"
+    },
+    {
+      "Column": "Center",
+      "CountMax": 1,
+      "CountMin": 1,
+      "EncounterId": "enc_test_exact_front",
+      "FixedMonsterId": "mon_004",
+      "PositionMode": "Exact",
+      "Row": "Front",
+      "SelectionMode": "FixedMonster",
+      "SlotId": "slot_exact_front_center"
+    },
+    {
+      "Column": "Left",
+      "CountMax": 1,
+      "CountMin": 1,
+      "EncounterId": "enc_test_exact_front",
+      "FixedMonsterId": "mon_001",
+      "PositionMode": "Exact",
+      "Row": "Front",
+      "SelectionMode": "FixedMonster",
+      "SlotId": "slot_exact_front_left"
+    },
+    {
+      "Column": "Right",
+      "CountMax": 1,
+      "CountMin": 1,
+      "EncounterId": "enc_test_exact_front",
+      "FixedMonsterId": "mon_002",
+      "PositionMode": "Exact",
+      "Row": "Front",
+      "SelectionMode": "FixedMonster",
+      "SlotId": "slot_exact_front_right"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77438420f1fc10342a4342d3c1a8a478, type: 3}
+  m_Name: TestGrowthTable
+  m_EditorClassIdentifier: 
+  TableId: test_table
+  Nodes:
+  - {fileID: 11400000, guid: 17332aeb02b606e418d6d331caf524ee, type: 2}
+  - {fileID: 11400000, guid: ee90363051d8ba8438f38b570541fab6, type: 2}
+  - {fileID: 11400000, guid: 37130613df538f9408b25fa6222d734a, type: 2}
+  - {fileID: 11400000, guid: 43c6a87c58d7dcf4fa4d0a3045d6bc81, type: 2}

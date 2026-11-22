@@ -72,7 +72,7 @@ public sealed class ProductHomeWorldHost : MonoBehaviour
         if (Time.unscaledTime>=_nextRead) { _nextRead=Time.unscaledTime+.1f;RefreshNow(); }
         StepPresentation(Time.deltaTime);
         RefreshLabelReadability();
-        bool overUI=PointerOverUI(Input.mousePosition);WorldCamera.ReadInput(overUI,Shell.Build.IsOpen);
+        bool overUI=Shell.IsPersonModalOpen || PointerOverUI(Input.mousePosition);WorldCamera.ReadInput(overUI,Shell.Build.IsOpen);
         if(Shell.Build.IsOpen) Shell.Build.ReadInput(overUI);
         HandleWorldHover(overUI ? (HomeWorldEntityView)null : HitAt(Input.mousePosition));
         if (!Shell.Build.IsOpen && !overUI && Input.GetMouseButtonDown(0)) HandleWorldClick(Input.mousePosition);
@@ -181,7 +181,7 @@ public sealed class ProductHomeWorldHost : MonoBehaviour
     }
     public void HandleWorldClick(Vector2 screen)
     {
-        if(PointerOverUI(screen)) return;
+        if(Shell.IsPersonModalOpen || PointerOverUI(screen)) return;
         var hit=HitAt(screen);
         if (hit==null) Selection.Clear();else hit.Click();
         RefreshNow();

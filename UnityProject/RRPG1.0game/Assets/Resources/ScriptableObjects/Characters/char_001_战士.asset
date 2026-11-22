@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9e118e97cb8a2448901037375d5ed9, type: 3}
+  m_Name: "char_001_\u6218\u58EB"
+  m_EditorClassIdentifier: 
+  CharacterId: char_001
+  DisplayName: "\u6218\u58EB"
+  BaseHP: 30
+  BaseAttack: 20
+  AttackRange: 1
+  AttackCount: 1
+  ActionPoints: 1
+  Faction: player
+  InitialSkillIds:
+  - sk_001

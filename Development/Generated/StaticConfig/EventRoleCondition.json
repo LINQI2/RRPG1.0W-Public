@@ -1,0 +1,79 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "1a939be0a5605ee5ad5df6c44acfc13266f8365fecc513ae449b89156e452d27",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventRoleCondition",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ConditionId"
+  ],
+  "columns": [
+    {
+      "field": "ConditionId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "ConditionType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=PersonInVillage|PersonOnExpedition|PersonAvailable"
+      ]
+    },
+    {
+      "field": "IntValue",
+      "type": "int",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "RoleId",
+      "type": "ref:EventRole",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "StringValue",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "TargetKey",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    }
+  ],
+  "rowCount": 1,
+  "rows": [
+    {
+      "ConditionId": "rc_test_exp_scout_available",
+      "ConditionType": "PersonAvailable",
+      "IntValue": null,
+      "RoleId": "role_test_exp_scout",
+      "StringValue": null,
+      "TargetKey": null
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "34ce81b924446a320392ec44821c4cfc99d5e0c40935e2debeada1ce863893c9",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Encounters.xlsx",
+    "sheet": "EncounterSlotRule",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "Dimension",
+    "RuleMode",
+    "SlotId",
+    "Value"
+  ],
+  "columns": [
+    {
+      "field": "Dimension",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key",
+        "allowed=Role|Tier|MonsterId"
+      ]
+    },
+    {
+      "field": "RuleMode",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key",
+        "allowed=AnyOf|Require|Exclude"
+      ]
+    },
+    {
+      "field": "SlotId",
+      "type": "ref:EncounterSlot",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "Value",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    }
+  ],
+  "rowCount": 8,
+  "rows": [
+    {
+      "Dimension": "MonsterId",
+      "RuleMode": "AnyOf",
+      "SlotId": "slot_elite_any",
+      "Value": "mon_002"
+    },
+    {
+      "Dimension": "MonsterId",
+      "RuleMode": "AnyOf",
+      "SlotId": "slot_elite_any",
+      "Value": "mon_005"
+    },
+    {
+      "Dimension": "Role",
+      "RuleMode": "Exclude",
+      "SlotId": "slot_basic_back",
+      "Value": "Melee"
+    },
+    {
+      "Dimension": "Role",
+      "RuleMode": "Require",
+      "SlotId": "slot_basic_front",
+      "Value": "Melee"
+    },
+    {
+      "Dimension": "Role",
+      "RuleMode": "Require",
+      "SlotId": "slot_boss_support",
+      "Value": "Support"
+    },
+    {
+      "Dimension": "Role",
+      "RuleMode": "Require",
+      "SlotId": "slot_elite_tank",
+      "Value": "Tank"
+    },
+    {
+      "Dimension": "Tier",
+      "RuleMode": "Require",
+      "SlotId": "slot_boss_fixed",
+      "Value": "Boss"
+    },
+    {
+      "Dimension": "Tier",
+      "RuleMode": "Require",
+      "SlotId": "slot_elite_tank",
+      "Value": "Elite"
+    }
+  ]
+}

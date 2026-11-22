@@ -85,6 +85,64 @@ public class CharacterGrowthUI : MonoBehaviour
     private GrowthNodeConfig _pendingNode;
     private readonly List<BattleCardData> _pendingOffer = new List<BattleCardData>();
     private string _pendingCardId;
+    private bool _homeBound;
+    public bool HasPendingChoice => _pendingNode != null;
+    public bool IsOpen => canvasRoot != null && canvasRoot.activeSelf;
+    public string SelectedPersonId => _selected?.PersonId;
+    public System.Action Closed;
+    public System.Action<string> HomePersonSelected;
+
+    /// <summary>Home passes its existing source and stable identity; never loads or creates a world.</summary>
+    public bool OpenForPerson(PlayerCollection source, string personId, System.Action closed)
+    {
+        if (HasPendingChoice) { ShowMessage("请先完成本次选牌或明确跳过，再离开人物成长。"); return false; }
+        var person = source?.FindPersonByPersonId(personId);
+        if (person == null) return false;
+        playerData = source; _homeBound = true; Closed = closed;
+        GrowthConfigProvider.EnsureLoaded();
+        _allTemplates = DataManager.Instance?.AllBattleCards == null ? new List<BattleCardData>() : new List<BattleCardData>(DataManager.Instance.AllBattleCards);
+        EnsureHostReady(); ClearFlow(); _selected = person;
+        canvasRoot.SetActive(true); Refresh(); return true;
+    }
+
+    public bool TrySelectPerson(string personId)
+    {
+        if (HasPendingChoice) { ShowMessage("请先完成本次选牌或明确跳过。"); return false; }
+        var person = playerData?.FindPersonByPersonId(personId);
+        if (person == null) return false;
+        _selected = person; ClearFlow(); if (_homeBound) HomePersonSelected?.Invoke(personId); Refresh(); return true;
+    }
+
+    public bool TryHide()
+    {
+        if (HasPendingChoice) { ShowMessage("请先完成本次选牌或明确跳过，再关闭。"); return false; }
+        if (canvasRoot != null) canvasRoot.SetActive(false);
+        var callback = Closed; Closed = null; HomePersonSelected = null; _homeBound = false; callback?.Invoke(); return true;
+    }
+
+    private void Update()
+    {
+        if (IsOpen && Input.GetKeyDown(KeyCode.Escape) && !_homeBound) TryHide();
+    }
+
+    private bool CurrentPersonCanWrite()
+    {
+        if (!VillageRuntimeBridge.GuardWorldWrite()) { ShowMessage("世界正在推进或等待返程保存。"); return false; }
+        if (_selected == null || !ReferenceEquals(playerData?.FindPersonByPersonId(_selected.PersonId), _selected))
+        { ShowMessage("人物资料已变化，不能执行成长。"); return false; }
+        if (_homeBound && !ReferenceEquals(playerData, VillageRuntimeBridge.SimulationPersonSource))
+        { ShowMessage("世界来源已变化，保留本次待处理选择，禁止写入其它人物或存档。"); return false; }
+        var availability = VillagePersonAvailability.Resolve(VillageRuntimeBridge.BuildPersonInputs(playerData), VillageRuntimeBridge.ExpeditionPersonIds);
+        if (!System.Linq.Enumerable.Any(availability, p => p.PersonId == _selected.PersonId && p.Availability == VillageAvailability.InVillage))
+        { ShowMessage("人物当前不在村或不可用。"); return false; }
+        return true;
+    }
+
+    private void SaveAndRefresh(string message)
+    {
+        bool saved = SaveSystem.Save(playerData);
+        Refresh(); ShowMessage(message + (saved ? " ｜ 已保存" : " ｜ 保存未成功，内存变化仍保留，请稍后重试保存"));
+    }
 
     private void Start()
     {
@@ -142,6 +200,8 @@ public class CharacterGrowthUI : MonoBehaviour
 
         BindCloseButton(); // 关闭按钮统一绑定 Hide（Prefab 静态宿主也生效）
 
+        var saveButton = canvasRoot?.transform.Find("Content/BtnSave")?.GetComponent<Button>();
+        if (saveButton != null) { saveButton.onClick.RemoveAllListeners(); saveButton.onClick.AddListener(() => { if (!HasPendingChoice && CurrentPersonCanWrite()) SaveAndRefresh("当前成长状态"); else if (HasPendingChoice) ShowMessage("请先完成选牌或明确跳过。"); }); }
         _hostReady = true;
     }
 
@@ -164,6 +224,8 @@ public class CharacterGrowthUI : MonoBehaviour
 
     public void Open()
     {
+        if (HasPendingChoice) { canvasRoot?.SetActive(true); ShowMessage("请先完成本次选牌或明确跳过。" ); return; }
+        _homeBound = false; Closed = null;
         if (playerData == null)
         {
             var town = FindObjectOfType<TownUI>(true);
@@ -181,7 +243,7 @@ public class CharacterGrowthUI : MonoBehaviour
 
     public void Hide()
     {
-        if (canvasRoot != null) canvasRoot.SetActive(false);
+        TryHide();
     }
 
     /// <summary>
@@ -189,7 +251,7 @@ public class CharacterGrowthUI : MonoBehaviour
     /// </summary>
     public void RefreshTownEntry(PlayerCollection collection)
     {
-        if (collection != null) playerData = collection;
+        if (collection != null && !HasPendingChoice && !IsOpen) playerData = collection;
         if (_townEntryDot == null) return;
         if (playerData == null || GrowthConfigProvider.Curve == null)
         {
@@ -210,6 +272,11 @@ public class CharacterGrowthUI : MonoBehaviour
     {
         RefreshList();
         if (_selected != null) ShowDetail(_selected);
+        if (HasPendingChoice)
+        {
+            if (string.IsNullOrEmpty(_pendingCardId)) BeginCardGrowthOffer(_selected);
+            else ShowStarterStrategy(_pendingCardId);
+        }
         RefreshTownEntry(playerData); // 升级后 Town 入口红点即时同步
     }
 
@@ -297,9 +364,9 @@ public class CharacterGrowthUI : MonoBehaviour
             Vector2 pos = new Vector2(0, listStartPosition.y - 60 - i * listSpacingY);
             var card = (RectTransform)NewButton(listRoot, "CharCard_" + p.PersonId, "", pos, listCardSize,
                 _selected == p ? new Color(0.25f, 0.4f, 0.25f, 1f) : new Color(0.2f, 0.2f, 0.25f, 1f),
-                () => { _selected = p; ClearFlow(); Refresh(); }).transform;
+                () => TrySelectPerson(p.PersonId)).transform;
 
-            bool can = CharacterGrowthService.CanLevelUp(p, GrowthConfigProvider.Curve);
+            bool can = !HasPendingChoice && CharacterGrowthService.CanLevelUp(p, GrowthConfigProvider.Curve);
             IGrowthAuthority auth = GrowthAuthority.Resolve(p);
             bool unavailable = auth == null || !auth.IsAvailable; // 普通 Character 无 Active Profession
             string nameText = unavailable
@@ -324,10 +391,10 @@ public class CharacterGrowthUI : MonoBehaviour
         DestroyDetailContent();
 
         IGrowthAuthority auth = GrowthAuthority.Resolve(p);
-        bool can = CharacterGrowthService.CanLevelUp(p, GrowthConfigProvider.Curve);
+        bool can = !HasPendingChoice && CharacterGrowthService.CanLevelUp(p, GrowthConfigProvider.Curve);
         bool unavailable = auth == null || !auth.IsAvailable; // 普通 Character 无 Active Profession
 
-        NewText(detailRoot, "D_Name", p.DisplayName + "（" + p.PersonId + "）", 28, Color.white,
+        NewText(detailRoot, "D_Name", p.DisplayName, 28, Color.white,
             new Vector2(0, detailSize.y * 0.5f - 90), new Vector2(600, 40));
 
         string traitName = "无";
@@ -442,8 +509,8 @@ public class CharacterGrowthUI : MonoBehaviour
 
     private void OnLevelUpClick()
     {
-        if (!VillageRuntimeBridge.GuardWorldWrite()) { ShowMessage("世界正在推进或等待返程保存。"); return; }
-        if (_selected == null) return;
+        if (!CurrentPersonCanWrite()) return;
+        if (_selected == null || HasPendingChoice) return;
         var curve = GrowthConfigProvider.Curve;
         var table = GrowthConfigProvider.Table;
 
@@ -458,9 +525,7 @@ public class CharacterGrowthUI : MonoBehaviour
 
         if (node == null)
         {
-            ShowMessage(baseMsg + " ｜ 该等级暂无成长节点");
-            SaveSystem.Save(playerData);
-            Refresh();
+            SaveAndRefresh(baseMsg + " ｜ 该等级暂无成长节点");
             return;
         }
 
@@ -469,32 +534,28 @@ public class CharacterGrowthUI : MonoBehaviour
             _pendingNode = node;
             Refresh(); // 升级后的等级/经验先刷新显示
             ShowMessage(baseMsg + " ｜ 该等级为「牌成长」，请选择一张牌或跳过");
-            BeginCardGrowthOffer(_selected);
+            // Refresh renders the same pending offer; no second generation.
             return;
         }
 
         // 固定型节点：领取后立即生效
         var result = CharacterGrowthService.ApplyFixedNode(_selected, node, GrowthConfigProvider.TraitCatalog);
-        SaveSystem.Save(playerData);
-        Refresh();
-        ShowMessage(baseMsg + " ｜ " + result.Message
+        SaveAndRefresh(baseMsg + " ｜ " + result.Message
             + "（已领取 Lv." + node.Level + " 成长节点：" + NodeTypeName(node.NodeType) + "）");
     }
 
     private void BeginCardGrowthOffer(IPersonGrowth p)
     {
-        if (!VillageRuntimeBridge.GuardWorldWrite()) { ShowMessage("世界正在推进或等待返程保存。"); return; }
-        _pendingOffer.Clear();
-        _pendingOffer.AddRange(CardGrowthResolver.BuildOffer(p, _allTemplates));
+        if (!CurrentPersonCanWrite()) return;
+        if (_pendingOffer.Count == 0)
+            _pendingOffer.AddRange(CardGrowthResolver.BuildOffer(p, _allTemplates));
 
         DestroyFlowObjects();
 
         if (_pendingOffer.Count == 0)
         {
-            ShowMessage("Unlocked Pool 为空，本次成长选牌自动跳过");
             _pendingNode = null;
-            SaveSystem.Save(playerData);
-            Refresh();
+            SaveAndRefresh("Unlocked Pool 为空，本次成长选牌自动跳过");
             return;
         }
 
@@ -507,19 +568,20 @@ public class CharacterGrowthUI : MonoBehaviour
         {
             var card = _pendingOffer[i];
             int idx = i;
-            NewButton(detailRoot, "F_Card" + i, (card.DisplayName ?? card.CardId) + "\n" + (card.Description ?? ""),
+            var offerButton = NewButton(detailRoot, "F_Card" + i, (card.DisplayName ?? card.CardId) + "\n" + (card.Description ?? ""),
                 new Vector2(x0 + i * spacing, -205), new Vector2(200, 100), new Color(0.25f, 0.35f, 0.5f, 1f),
                 () => OnOfferPick(idx));
+            offerButton.GetComponentInChildren<TMP_Text>().fontSize = 16;
         }
 
-        NewButton(detailRoot, "F_Skip", "Skip", new Vector2(290, -215), new Vector2(120, 48),
+        NewButton(detailRoot, "F_Skip", "Skip", new Vector2(290, -310), new Vector2(120, 48),
             new Color(0.35f, 0.35f, 0.35f, 1f), OnOfferSkip);
     }
 
     private void OnOfferPick(int index)
     {
-        if (!VillageRuntimeBridge.GuardWorldWrite()) { ShowMessage("世界正在推进或等待返程保存。"); return; }
-        if (index < 0 || index >= _pendingOffer.Count) return;
+        if (!CurrentPersonCanWrite()) return;
+        if (!HasPendingChoice || index < 0 || index >= _pendingOffer.Count) return;
         var card = _pendingOffer[index];
         _pendingCardId = card.CardId;
         ShowMessage("已选牌：" + (card.DisplayName ?? card.CardId) + " —— 请选择 Starter 处理方式");
@@ -528,13 +590,11 @@ public class CharacterGrowthUI : MonoBehaviour
 
     private void OnOfferSkip()
     {
-        if (!VillageRuntimeBridge.GuardWorldWrite()) { ShowMessage("世界正在推进或等待返程保存。"); return; }
+        if (!CurrentPersonCanWrite()) return;
         _pendingNode = null;
         _pendingOffer.Clear();
         _pendingCardId = null;
-        ShowMessage("已跳过本次成长选牌（等级已保留，经验已消耗）");
-        SaveSystem.Save(playerData);
-        Refresh();
+        SaveAndRefresh("已跳过本次成长选牌（等级已保留，经验已消耗）");
     }
 
     private void ShowStarterStrategy(string cardId)
@@ -592,17 +652,16 @@ public class CharacterGrowthUI : MonoBehaviour
 
     private void OnStrategyPick(StarterCardStrategy strategy, int slotIndex)
     {
-        if (!VillageRuntimeBridge.GuardWorldWrite()) { ShowMessage("世界正在推进或等待返程保存。"); return; }
-        if (_selected == null || string.IsNullOrEmpty(_pendingCardId)) return;
+        if (!CurrentPersonCanWrite()) return;
+        if (_selected == null || !HasPendingChoice || string.IsNullOrEmpty(_pendingCardId) || !_pendingOffer.Exists(c => c.CardId == _pendingCardId)) return;
         var result = CardGrowthResolver.ApplyToStarter(_selected, _pendingCardId, strategy, slotIndex,
             GrowthConfigProvider.Curve);
 
+        if (!result.Applied) { ShowMessage(result.Message + " ｜ 未处理，请重新选择或跳过"); return; }
         _pendingNode = null;
         _pendingOffer.Clear();
         _pendingCardId = null;
-        ShowMessage(result.Message + " ｜ 成长节点已处理");
-        SaveSystem.Save(playerData);
-        Refresh();
+        SaveAndRefresh(result.Message + " ｜ 成长节点已处理");
     }
 
     private void ShowMessage(string msg)
@@ -724,7 +783,7 @@ public class CharacterGrowthUI : MonoBehaviour
             t.color = Color.white;
             t.alignment = TextAlignmentOptions.Center;
             t.enableWordWrapping = true;
-            t.overflowMode = TextOverflowModes.Overflow;
+            t.overflowMode = TextOverflowModes.Ellipsis;
         }
         return btn;
     }

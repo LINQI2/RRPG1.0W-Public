@@ -1,0 +1,99 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "522639bb5758a3bafc8f0e46f1a12ca112e33dc5a1a82df07ca533f0508123bc",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Encounters.xlsx",
+    "sheet": "Encounter",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "EncounterId"
+  ],
+  "columns": [
+    {
+      "field": "AllowDuplicateMonster",
+      "type": "bool",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Enabled",
+      "type": "bool",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "EncounterId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "ThreatBudgetMax",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    },
+    {
+      "field": "ThreatBudgetMin",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    }
+  ],
+  "rowCount": 4,
+  "rows": [
+    {
+      "AllowDuplicateMonster": true,
+      "DisplayName": "测试遭遇·基础",
+      "Enabled": true,
+      "EncounterId": "enc_test_basic",
+      "ThreatBudgetMax": 9,
+      "ThreatBudgetMin": 3
+    },
+    {
+      "AllowDuplicateMonster": false,
+      "DisplayName": "测试遭遇·首领",
+      "Enabled": true,
+      "EncounterId": "enc_test_boss",
+      "ThreatBudgetMax": 24,
+      "ThreatBudgetMin": 8
+    },
+    {
+      "AllowDuplicateMonster": false,
+      "DisplayName": "测试遭遇·精英",
+      "Enabled": true,
+      "EncounterId": "enc_test_elite",
+      "ThreatBudgetMax": 16,
+      "ThreatBudgetMin": 8
+    },
+    {
+      "AllowDuplicateMonster": false,
+      "DisplayName": "测试遭遇·前排三人",
+      "Enabled": true,
+      "EncounterId": "enc_test_exact_front",
+      "ThreatBudgetMax": 15,
+      "ThreatBudgetMin": 6
+    }
+  ]
+}

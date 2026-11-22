@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3918fe5f5c458a24cbadfbe92e6ea278, type: 3}
+  m_Name: TestTraitCatalog
+  m_EditorClassIdentifier: 
+  DefaultTraits:
+  - PersonId: char_001
+    Trait: {fileID: 11400000, guid: a0f01a8954285e34c830da299973fe9e, type: 2}
+  - PersonId: char_002
+    Trait: {fileID: 11400000, guid: f2bdb9d21a5c8c046918bc947c9f71ee, type: 2}
+  - PersonId: char_003
+    Trait: {fileID: 11400000, guid: d47c53d37dfe0d542a8dfdf017ec9fe8, type: 2}
+  - PersonId: char_004
+    Trait: {fileID: 11400000, guid: 007b1ff701292594094a5e3b0899a842, type: 2}
+  - PersonId: hero_001
+    Trait: {fileID: 11400000, guid: d41c77e342d212842b1b801b777558e6, type: 2}

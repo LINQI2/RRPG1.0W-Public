@@ -1,0 +1,187 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "31121759e2c04a462d259d8ee8312b43dbe038ae1effc36f9b8ce472babada0f",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventEffect",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "EffectId"
+  ],
+  "columns": [
+    {
+      "field": "EffectId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "EffectType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=SetFlag|ClearFlag|VillageResourceDelta|GrantPersonRest|SupplyDelta|AdvanceExpeditionTime|StartBattle"
+      ]
+    },
+    {
+      "field": "IntValue",
+      "type": "int",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "Order",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "OutcomeId",
+      "type": "ref:EventOutcome",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "StringValue",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "TargetKey",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "TargetRoleId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    }
+  ],
+  "rowCount": 10,
+  "rows": [
+    {
+      "EffectId": "eff_test_exp_force_battle",
+      "EffectType": "StartBattle",
+      "IntValue": null,
+      "Order": 2,
+      "OutcomeId": "out_test_exp_force",
+      "StringValue": null,
+      "TargetKey": "pool_test_general",
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_force_time",
+      "EffectType": "AdvanceExpeditionTime",
+      "IntValue": 1,
+      "Order": 1,
+      "OutcomeId": "out_test_exp_force",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_investigate_bad_battle",
+      "EffectType": "StartBattle",
+      "IntValue": null,
+      "Order": 2,
+      "OutcomeId": "out_test_exp_investigate_bad",
+      "StringValue": null,
+      "TargetKey": "pool_test_general",
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_investigate_bad_time",
+      "EffectType": "AdvanceExpeditionTime",
+      "IntValue": 1,
+      "Order": 1,
+      "OutcomeId": "out_test_exp_investigate_bad",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_investigate_ok_supply",
+      "EffectType": "SupplyDelta",
+      "IntValue": 3,
+      "Order": 1,
+      "OutcomeId": "out_test_exp_investigate_ok",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_investigate_ok_time",
+      "EffectType": "AdvanceExpeditionTime",
+      "IntValue": 1,
+      "Order": 2,
+      "OutcomeId": "out_test_exp_investigate_ok",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_leave_time",
+      "EffectType": "AdvanceExpeditionTime",
+      "IntValue": 1,
+      "Order": 1,
+      "OutcomeId": "out_test_exp_leave",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_store_supply",
+      "EffectType": "SupplyDelta",
+      "IntValue": 2,
+      "Order": 1,
+      "OutcomeId": "out_test_exp_store",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_exp_store_time",
+      "EffectType": "AdvanceExpeditionTime",
+      "IntValue": 1,
+      "Order": 2,
+      "OutcomeId": "out_test_exp_store",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": null
+    },
+    {
+      "EffectId": "eff_test_village_grant_rest",
+      "EffectType": "GrantPersonRest",
+      "IntValue": null,
+      "Order": 1,
+      "OutcomeId": "out_test_village_grant_rest",
+      "StringValue": null,
+      "TargetKey": null,
+      "TargetRoleId": "role_test_village_requester"
+    }
+  ]
+}

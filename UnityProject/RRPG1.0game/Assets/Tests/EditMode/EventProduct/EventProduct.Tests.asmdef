@@ -1,0 +1,29 @@
+{
+    "name": "EventProduct.Tests",
+    "rootNamespace": "",
+    "references": [
+        "Event.Runtime",
+        "StaticConfig.Runtime",
+        "Village.Runtime",
+        "ExpeditionProgression.Runtime",
+        "Encounter.Runtime",
+        "RRPG.Deterministic.Runtime",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

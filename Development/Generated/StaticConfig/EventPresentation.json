@@ -1,0 +1,95 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "d6567eb4e2ec0ec873f8a7d4047082010c49f14787891c9cb7ed2e2e0cbf6631",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventPresentation",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "EventId"
+  ],
+  "columns": [
+    {
+      "field": "BodyTemplate",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "EventId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "IllustrationAssetId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "PauseOnOpen",
+      "type": "bool",
+      "key": false,
+      "rules": [
+        "default=false"
+      ]
+    },
+    {
+      "field": "PresentationChannel",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=JourneyCard|VillageModal"
+      ]
+    },
+    {
+      "field": "TitleTemplate",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Urgency",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Timely|Ignorable"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "BodyTemplate": "{role_test_exp_scout.DisplayName} 注意到半塌的石龛里还残留着旧祭品。",
+      "EventId": "evt_test_exp_ruined_shrine",
+      "IllustrationAssetId": null,
+      "PauseOnOpen": false,
+      "PresentationChannel": "JourneyCard",
+      "TitleTemplate": "路边的废墟神龛",
+      "Urgency": "Ignorable"
+    },
+    {
+      "BodyTemplate": "{role_test_village_requester.DisplayName} 已经连续多次承担临时任务，想谈谈接下来的节奏。",
+      "EventId": "evt_test_village_temp_draft",
+      "IllustrationAssetId": null,
+      "PauseOnOpen": true,
+      "PresentationChannel": "VillageModal",
+      "TitleTemplate": "村庄里有人私下提起最近的安排",
+      "Urgency": "Timely"
+    }
+  ]
+}

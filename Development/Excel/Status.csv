@@ -1,0 +1,4 @@
+﻿StatusId,Name,Duration,OnExpireStatusId,EffectType_1,Value_1,TargetRule_1
+status_tipsy,微醺,1,status_hungover,AddAttack,5,Self
+status_hungover,醉醺,1,,SubAttack,6,Self
+status_stun,眩晕,1,,SubAttack,3,Self

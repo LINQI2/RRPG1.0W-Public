@@ -1,0 +1,78 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "b3b93981ccbcaed47b430372ab30e3d1ecd1d45ad643b9c9948fdf55244bf523",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Buildings.xlsx",
+    "sheet": "BuildingFunctionBinding",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BuildingDefinitionId",
+    "FunctionSlotId"
+  ],
+  "columns": [
+    {
+      "field": "BuildingDefinitionId",
+      "type": "ref:BuildingDefinition",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "FunctionProfileId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=ws_farm_01|ws_kitchen_01|ws_test_01|ws_test_02"
+      ]
+    },
+    {
+      "field": "FunctionSlotId",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "FunctionType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Workplace"
+      ]
+    }
+  ],
+  "rowCount": 3,
+  "rows": [
+    {
+      "BuildingDefinitionId": "building_farm",
+      "FunctionProfileId": "ws_farm_01",
+      "FunctionSlotId": "main",
+      "FunctionType": "Workplace"
+    },
+    {
+      "BuildingDefinitionId": "building_kitchen",
+      "FunctionProfileId": "ws_kitchen_01",
+      "FunctionSlotId": "main",
+      "FunctionType": "Workplace"
+    },
+    {
+      "BuildingDefinitionId": "building_workshop",
+      "FunctionProfileId": "ws_test_01",
+      "FunctionSlotId": "main",
+      "FunctionType": "Workplace"
+    }
+  ]
+}

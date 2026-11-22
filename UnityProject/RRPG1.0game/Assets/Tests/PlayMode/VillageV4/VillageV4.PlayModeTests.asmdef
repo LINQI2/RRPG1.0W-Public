@@ -1,0 +1,26 @@
+{
+    "name": "VillageV4.PlayModeTests",
+    "rootNamespace": "",
+    "references": [
+        "Village.Runtime",
+        "Growth.Runtime",
+        "Profession.Runtime",
+        "BattleStage1.Runtime",
+        "ExpeditionProgression.Runtime",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

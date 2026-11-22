@@ -1,0 +1,85 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "dca0930bedba638e9657d8b45b1a08548171c80046b5bac7f94b3fc9f8fc8c6f",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "ActivityRelationshipBinding",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BindingId"
+  ],
+  "columns": [
+    {
+      "field": "ActivityType",
+      "type": "ref:Activity",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "BindingId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Direction",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=-1",
+        "<=1"
+      ]
+    },
+    {
+      "field": "Key",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Affinity"
+      ]
+    },
+    {
+      "field": "Strength",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Weak|Medium|Strong"
+      ]
+    }
+  ],
+  "rowCount": 3,
+  "rows": [
+    {
+      "ActivityType": "Help",
+      "BindingId": "help.affinity",
+      "Direction": 1,
+      "Key": "Affinity",
+      "Strength": "Medium"
+    },
+    {
+      "ActivityType": "Talk",
+      "BindingId": "talk.affinity",
+      "Direction": 1,
+      "Key": "Affinity",
+      "Strength": "Medium"
+    },
+    {
+      "ActivityType": "VisitSick",
+      "BindingId": "visit.affinity",
+      "Direction": 1,
+      "Key": "Affinity",
+      "Strength": "Weak"
+    }
+  ]
+}

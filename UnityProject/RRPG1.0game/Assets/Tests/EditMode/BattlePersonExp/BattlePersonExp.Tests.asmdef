@@ -1,0 +1,25 @@
+{
+    "name": "BattlePersonExp.Tests",
+    "rootNamespace": "",
+    "references": [
+        "BattleStage1.Runtime",
+        "Growth.Runtime",
+        "Profession.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

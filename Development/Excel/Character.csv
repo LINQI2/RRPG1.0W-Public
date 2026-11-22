@@ -1,0 +1,8 @@
+﻿CharacterId,DisplayName,BaseHP,BaseAttack,AttackRange,AttackCount,ActionPoints,Faction,InitialSkillIds
+char_001,战士,30,20,1,1,1,player,sk_001
+char_002,猎人,22,20,2,1,1,player,
+char_003,医师,25,4,1,1,1,player,sk_002
+char_004,村长,30,2,1,1,1,player,sk_003
+char_005,法师,20,9,2,1,1,player,sk_004
+char_006,盾卫,40,3,1,1,1,player,
+char_007_guard,守卫,35,6,1,1,1,player,sk_005_shield_bash

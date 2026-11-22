@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19bb50bdcc091fa42893aaba05499051, type: 3}
+  m_Name: PersonDefinitionCatalog
+  m_EditorClassIdentifier: 
+  Definitions:
+  - PersonDefinitionId: person_lin_en
+    DisplayName: "\u6797\u6069"
+    CombatDefinitionId: char_001
+    CardDefinitionId: ccard_001
+    InitialProfession:
+      ProfessionId: profession_test_c
+      InitialLevel: 1
+      InitialExp: 0
+      InitialTraitLevel: 1
+      HasUnlockedPoolOverride: 0
+      InitialUnlockedPoolOverride: []
+      HasStarterBuildOverride: 0
+      InitialStarterBuildOverride: []
+    InitialRosterOrder: 1
+  - PersonDefinitionId: person_su_wan
+    DisplayName: "\u82CF\u665A"
+    CombatDefinitionId: char_003
+    CardDefinitionId: ccard_003
+    InitialProfession:
+      ProfessionId: profession_test_a
+      InitialLevel: 1
+      InitialExp: 0
+      InitialTraitLevel: 1
+      HasUnlockedPoolOverride: 0
+      InitialUnlockedPoolOverride: []
+      HasStarterBuildOverride: 0
+      InitialStarterBuildOverride: []
+    InitialRosterOrder: 2
+  - PersonDefinitionId: person_han_zhao
+    DisplayName: "\u97E9\u662D"
+    CombatDefinitionId: char_002
+    CardDefinitionId: ccard_002
+    InitialProfession:
+      ProfessionId: profession_test_e
+      InitialLevel: 1
+      InitialExp: 0
+      InitialTraitLevel: 1
+      HasUnlockedPoolOverride: 0
+      InitialUnlockedPoolOverride: []
+      HasStarterBuildOverride: 0
+      InitialStarterBuildOverride: []
+    InitialRosterOrder: 3
+  - PersonDefinitionId: person_qiu_shuang
+    DisplayName: "\u90B1\u971C"
+    CombatDefinitionId: char_004
+    CardDefinitionId: ccard_004
+    InitialProfession:
+      ProfessionId: profession_test_b
+      InitialLevel: 1
+      InitialExp: 0
+      InitialTraitLevel: 1
+      HasUnlockedPoolOverride: 0
+      InitialUnlockedPoolOverride: []
+      HasStarterBuildOverride: 1
+      InitialStarterBuildOverride:
+      - CardId: bcard_sword
+        Proficiency: 1
+    InitialRosterOrder: 4
+  - PersonDefinitionId: person_wei_an
+    DisplayName: "\u9B4F\u5B89"
+    CombatDefinitionId: char_007_guard
+    CardDefinitionId: ccard_007_guard
+    InitialProfession:
+      ProfessionId: profession_test_d
+      InitialLevel: 1
+      InitialExp: 3
+      InitialTraitLevel: 2
+      HasUnlockedPoolOverride: 1
+      InitialUnlockedPoolOverride:
+      - bcard_heal
+      HasStarterBuildOverride: 1
+      InitialStarterBuildOverride:
+      - CardId: bcard_aim
+        Proficiency: 1
+      - CardId: bcard_heal
+        Proficiency: 2
+    InitialRosterOrder: 5

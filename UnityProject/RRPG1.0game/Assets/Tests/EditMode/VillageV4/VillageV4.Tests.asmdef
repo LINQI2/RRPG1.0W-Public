@@ -1,0 +1,27 @@
+{
+    "name": "VillageV4.Tests",
+    "rootNamespace": "",
+    "references": [
+        "Village.Runtime",
+        "Growth.Runtime",
+        "Profession.Runtime",
+        "BattleStage1.Runtime",
+        "ExpeditionProgression.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

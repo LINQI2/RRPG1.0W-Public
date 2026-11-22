@@ -1,0 +1,107 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "85ac2f5632773b829393db9dc16d33ef773aa4d57c44c38362fdb3f818fbd18c",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventOptionCondition",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ConditionId"
+  ],
+  "columns": [
+    {
+      "field": "ConditionId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "ConditionType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=ContextStringEquals|ContextIntAtLeast|ContextIntAtMost|FlagSet|FlagNotSet|EventNotSeen|EventSeenCountAtLeast|PersonExists|PersonInVillage|PersonOnExpedition|PersonAvailable|VillageResourceAtLeast|VillageResourceAtMost|ExpeditionDepthAtLeast|ExpeditionDepthAtMost|SupplyAtLeast|SupplyAtMost|PartySizeAtLeast|PartySizeAtMost"
+      ]
+    },
+    {
+      "field": "GroupId",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "IntValue",
+      "type": "int",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "OptionId",
+      "type": "ref:EventOption",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "StringValue",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "SubjectRoleId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "TargetKey",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "ConditionId": "oc_test_exp_investigate_supply",
+      "ConditionType": "SupplyAtLeast",
+      "GroupId": 1,
+      "IntValue": 3,
+      "OptionId": "opt_test_exp_investigate",
+      "StringValue": null,
+      "SubjectRoleId": null,
+      "TargetKey": null
+    },
+    {
+      "ConditionId": "oc_test_village_grant_rest_person",
+      "ConditionType": "PersonExists",
+      "GroupId": 1,
+      "IntValue": null,
+      "OptionId": "opt_test_village_grant_rest",
+      "StringValue": null,
+      "SubjectRoleId": "role_test_village_requester",
+      "TargetKey": null
+    }
+  ]
+}

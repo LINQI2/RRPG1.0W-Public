@@ -1,0 +1,17 @@
+{
+    "name": "SocialFoundation.Tests",
+    "references": [
+        "Social.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

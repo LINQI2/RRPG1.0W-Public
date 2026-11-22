@@ -1,0 +1,117 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "9dd945f134a14ea26ff5117d6953646aca06aed0cbe16de675ccf0e954fd350a",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventOption",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "OptionId"
+  ],
+  "columns": [
+    {
+      "field": "EventId",
+      "type": "ref:Event",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "LabelTemplate",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "OptionId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "SortOrder",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "SubLabelTemplate",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "UnavailableMode",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Hide|Disable"
+      ]
+    }
+  ],
+  "rowCount": 6,
+  "rows": [
+    {
+      "EventId": "evt_test_exp_ruined_shrine",
+      "LabelTemplate": "强行清理",
+      "OptionId": "opt_test_exp_force",
+      "SortOrder": 4,
+      "SubLabelTemplate": null,
+      "UnavailableMode": "Hide"
+    },
+    {
+      "EventId": "evt_test_exp_ruined_shrine",
+      "LabelTemplate": "调查神龛",
+      "OptionId": "opt_test_exp_investigate",
+      "SortOrder": 1,
+      "SubLabelTemplate": null,
+      "UnavailableMode": "Hide"
+    },
+    {
+      "EventId": "evt_test_exp_ruined_shrine",
+      "LabelTemplate": "离开",
+      "OptionId": "opt_test_exp_leave",
+      "SortOrder": 2,
+      "SubLabelTemplate": null,
+      "UnavailableMode": "Hide"
+    },
+    {
+      "EventId": "evt_test_exp_ruined_shrine",
+      "LabelTemplate": "储备口粮",
+      "OptionId": "opt_test_exp_store",
+      "SortOrder": 3,
+      "SubLabelTemplate": null,
+      "UnavailableMode": "Hide"
+    },
+    {
+      "EventId": "evt_test_village_temp_draft",
+      "LabelTemplate": "继续让他承担",
+      "OptionId": "opt_test_village_continue",
+      "SortOrder": 2,
+      "SubLabelTemplate": null,
+      "UnavailableMode": "Hide"
+    },
+    {
+      "EventId": "evt_test_village_temp_draft",
+      "LabelTemplate": "先给他一段恢复时间",
+      "OptionId": "opt_test_village_grant_rest",
+      "SortOrder": 1,
+      "SubLabelTemplate": null,
+      "UnavailableMode": "Hide"
+    }
+  ]
+}

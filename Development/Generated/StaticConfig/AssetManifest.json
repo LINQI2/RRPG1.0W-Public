@@ -1,0 +1,127 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "007d55827125875eb0f9764f7066a9996132b9963a43f69eceed28b377708a05",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；它记录 SourceAssets 源文件的内容哈希（换图 = 必须重新 build）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "managedRootRelative": "Assets/Generated/StaticConfig/Assets",
+  "assetCount": 14,
+  "sourceSetSha256": "e1caa2d9e4b342a01bf8f56abfbe343df6d9bda22a41ee31e78628e29b2abcaf",
+  "assets": [
+    {
+      "VisualAssetId": "va_enemy_mon_001",
+      "SourceFile": "Enemy/enemy_mon_001.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 592570,
+      "SourceSha256": "93f141b86f69db07e6a8a3652484c360afc878f5e5f9f787ec5d8fc70335dca0",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Enemy/enemy_mon_001.png"
+    },
+    {
+      "VisualAssetId": "va_enemy_mon_002",
+      "SourceFile": "Enemy/enemy_mon_002.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1220845,
+      "SourceSha256": "8a8e7836876ae9ea591e135ad90a306b5b25d1ac313fd12ee5b05b61a367dba0",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Enemy/enemy_mon_002.png"
+    },
+    {
+      "VisualAssetId": "va_enemy_mon_003",
+      "SourceFile": "Enemy/enemy_mon_003.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 855991,
+      "SourceSha256": "5421a021fcbd21eea19b49258899c3120c3fd4b5c53c61f8ef2158e683d414bd",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Enemy/enemy_mon_003.png"
+    },
+    {
+      "VisualAssetId": "va_enemy_mon_004",
+      "SourceFile": "Enemy/enemy_mon_004.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1519692,
+      "SourceSha256": "53ead04bad37237c760da249a2d0a0be82e4e32609e635968040f5afe4c86633",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Enemy/enemy_mon_004.png"
+    },
+    {
+      "VisualAssetId": "va_enemy_mon_005",
+      "SourceFile": "Enemy/enemy_mon_005.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1542364,
+      "SourceSha256": "36eefd716f98fb76a9d2fe81b7583d67df903f2bfca63a063fd32da8dc3dbfdf",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Enemy/enemy_mon_005.png"
+    },
+    {
+      "VisualAssetId": "va_enemy_mon_006",
+      "SourceFile": "Enemy/enemy_mon_006.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1568093,
+      "SourceSha256": "900b6b840dc8d322bbcbd5a3cc29c13199746aab95b4ec0c3ec184f8ad0951b6",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Enemy/enemy_mon_006.png"
+    },
+    {
+      "VisualAssetId": "va_village_farm_basic",
+      "SourceFile": "Village/farm-proof.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 4633,
+      "SourceSha256": "d1c3f317cc8727b7a77ab44abbaff789c8c646c369a5a1bb6442546580cabbc9",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/farm-proof.png"
+    },
+    {
+      "VisualAssetId": "va_village_farm_visual_b",
+      "SourceFile": "Village/farm-proof-b.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 4978,
+      "SourceSha256": "84f07f563d9370d6d29a95401711bd86ebde2b04d1550da75127a8f31c2c778f",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/farm-proof-b.png"
+    },
+    {
+      "VisualAssetId": "va_village_neutral_marker",
+      "SourceFile": "Village/neutral_marker.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 672,
+      "SourceSha256": "dc276b76186e00f94838b5274b169a89788b3cfeaa6bae512b9240ff1114a1a8",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/neutral_marker.png"
+    },
+    {
+      "VisualAssetId": "va_village_r2_farm",
+      "SourceFile": "Village/R2Prototype/farm.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1880781,
+      "SourceSha256": "1b9d8d5d1bdb761875d24017c2d15f4621ea619b37ffaed1a82d14d6901f4d6c",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/R2Prototype/farm.png"
+    },
+    {
+      "VisualAssetId": "va_village_r2_home",
+      "SourceFile": "Village/R2Prototype/home.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1566839,
+      "SourceSha256": "f255598eb987b7128b01cb748cf52c0f5611200d21e47dbbbab5efc485cbf748",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/R2Prototype/home.png"
+    },
+    {
+      "VisualAssetId": "va_village_r2_kitchen",
+      "SourceFile": "Village/R2Prototype/kitchen.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1889491,
+      "SourceSha256": "d342c5b69852e9c9f02d30cb62730b184b0ad65d445c221029997edf7b26207f",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/R2Prototype/kitchen.png"
+    },
+    {
+      "VisualAssetId": "va_village_r2_person",
+      "SourceFile": "Village/R2Prototype/person.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 733634,
+      "SourceSha256": "59ba92f9ad70365c018b24fbdc74ba6992fd85c18be2c9e6451f7b3eb65cfc30",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/R2Prototype/person.png"
+    },
+    {
+      "VisualAssetId": "va_village_r2_workshop",
+      "SourceFile": "Village/R2Prototype/workshop.png",
+      "ImportPreset": "sprite_point_100",
+      "SourceBytes": 1585255,
+      "SourceSha256": "c3619ccc9d2de6233dc5244c8b5920fea4c2c22d624147c951c4dfa1bcc3172c",
+      "ManagedAssetPath": "Assets/Generated/StaticConfig/Assets/Village/R2Prototype/workshop.png"
+    }
+  ]
+}

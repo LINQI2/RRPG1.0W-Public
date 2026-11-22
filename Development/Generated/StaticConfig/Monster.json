@@ -1,0 +1,135 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "1506aa46856c1ec4d64b70221dc350483f39feb134245d0e3f3e6086587da06d",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Monsters.xlsx",
+    "sheet": "Monster",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "MonsterId"
+  ],
+  "columns": [
+    {
+      "field": "ActionPoints",
+      "type": "int",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Attack",
+      "type": "int",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "AttackCount",
+      "type": "int",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "AttackRange",
+      "type": "int",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Faction",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "MaxHP",
+      "type": "int",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "MonsterId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Name",
+      "type": "string",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 6,
+  "rows": [
+    {
+      "ActionPoints": 1,
+      "Attack": 1,
+      "AttackCount": 1,
+      "AttackRange": 1,
+      "Faction": "enemy",
+      "MaxHP": 5,
+      "MonsterId": "mon_001",
+      "Name": "史莱姆"
+    },
+    {
+      "ActionPoints": 1,
+      "Attack": 1,
+      "AttackCount": 1,
+      "AttackRange": 2,
+      "Faction": "enemy",
+      "MaxHP": 5,
+      "MonsterId": "mon_002",
+      "Name": "骷髅弓手"
+    },
+    {
+      "ActionPoints": 1,
+      "Attack": 2,
+      "AttackCount": 1,
+      "AttackRange": 1,
+      "Faction": "enemy",
+      "MaxHP": 5,
+      "MonsterId": "mon_003",
+      "Name": "夜狼"
+    },
+    {
+      "ActionPoints": 1,
+      "Attack": 1,
+      "AttackCount": 1,
+      "AttackRange": 1,
+      "Faction": "enemy",
+      "MaxHP": 10,
+      "MonsterId": "mon_004",
+      "Name": "墓卫"
+    },
+    {
+      "ActionPoints": 1,
+      "Attack": 2,
+      "AttackCount": 1,
+      "AttackRange": 2,
+      "Faction": "enemy",
+      "MaxHP": 5,
+      "MonsterId": "mon_005",
+      "Name": "巫师"
+    },
+    {
+      "ActionPoints": 1,
+      "Attack": 3,
+      "AttackCount": 1,
+      "AttackRange": 1,
+      "Faction": "enemy",
+      "MaxHP": 12,
+      "MonsterId": "mon_006",
+      "Name": "巨兽"
+    }
+  ]
+}

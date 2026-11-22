@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6f3faa496507e48a9222e8a14551fe, type: 3}
+  m_Name: "bcard_rally_\u9F13\u821E"
+  m_EditorClassIdentifier: 
+  CardId: bcard_rally
+  DisplayName: "\u9F13\u821E"
+  CardKind: 0
+  Cost: 1
+  Retain: 0
+  IsExhaust: 0
+  Description: "\u6751\u957F\u4E13\u5C5E\u89D2\u8272\u724C\u6F14\u793A\uFF08Stage2
+    \u6F14\u793A\u5185\u5BB9\uFF1A\u6751\u957F\u53C2\u6218\u65F6\u8FDB\u5165\u672C\u573A\u724C\u5E93\uFF09"
+  Effect: 0
+  EffectValue: 0
+  TargetScope: 0

@@ -1,0 +1,81 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "14632187a10812e4363083c97a015cd8f6d7b05f3bfcf9341d5a8bfba363008d",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Monsters.xlsx",
+    "sheet": "MonsterRole",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "MonsterId",
+    "Role"
+  ],
+  "columns": [
+    {
+      "field": "MonsterId",
+      "type": "ref:Monster",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "Role",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key",
+        "allowed=Melee|Ranged|Tank|Support"
+      ]
+    }
+  ],
+  "rowCount": 9,
+  "rows": [
+    {
+      "MonsterId": "mon_001",
+      "Role": "Melee"
+    },
+    {
+      "MonsterId": "mon_002",
+      "Role": "Ranged"
+    },
+    {
+      "MonsterId": "mon_003",
+      "Role": "Melee"
+    },
+    {
+      "MonsterId": "mon_004",
+      "Role": "Melee"
+    },
+    {
+      "MonsterId": "mon_004",
+      "Role": "Tank"
+    },
+    {
+      "MonsterId": "mon_005",
+      "Role": "Ranged"
+    },
+    {
+      "MonsterId": "mon_005",
+      "Role": "Support"
+    },
+    {
+      "MonsterId": "mon_006",
+      "Role": "Melee"
+    },
+    {
+      "MonsterId": "mon_006",
+      "Role": "Tank"
+    }
+  ]
+}

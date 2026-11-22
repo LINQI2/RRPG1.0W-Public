@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6f3faa496507e48a9222e8a14551fe, type: 3}
+  m_Name: "bcard_break_poise_\u7834\u52BF"
+  m_EditorClassIdentifier: 
+  CardId: bcard_break_poise
+  DisplayName: "\u7834\u52BF"
+  CardKind: 0
+  Cost: 1
+  Retain: 0
+  IsExhaust: 0
+  Description: "\u9020\u6210\u56FA\u5B9A\u4F24\u5BB3\uFF1B\u76EE\u6807\u5F53\u524D
+    Intent \u4E3A\u9632\u5FA1\u65F6\u989D\u5916\u56FA\u5B9A\u4F24\u5BB3\u3002"
+  RangeModifier: 0
+  Effect: 1
+  EffectValue: 4
+  TargetScope: 1
+  RuleProgram:
+    Trigger: 1
+    ManualTargetKind: 1
+    PlayRequirement:
+      TargetSource: 0
+      Select: 0
+      MinCount: 1
+    Steps:
+    - Operation: 1
+      TargetSource: 1
+      Select: 0
+      ValueSource: 1
+      ValueParam: 4
+      BonusCondition: 2
+      BonusConditionParam: 0
+      BonusValueSource: 1
+      BonusValueParam: 3
+      Lifetime: 0

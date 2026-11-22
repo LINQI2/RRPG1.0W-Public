@@ -1,0 +1,55 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "7e284eff48bc3426a81d34903876563b81a633946fd66507bde1d2e53b97f719",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Encounters.xlsx",
+    "sheet": "EncounterPool",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "PoolId"
+  ],
+  "columns": [
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Enabled",
+      "type": "bool",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "PoolId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "DisplayName": "测试遭遇池·深层",
+      "Enabled": true,
+      "PoolId": "pool_test_deep"
+    },
+    {
+      "DisplayName": "测试遭遇池·通用",
+      "Enabled": true,
+      "PoolId": "pool_test_general"
+    }
+  ]
+}

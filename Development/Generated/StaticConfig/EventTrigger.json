@@ -1,0 +1,57 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "f89806bdfafaa027757d0881e7e3e26a77ea7884a7b6a7efcd8b864caa181cd5",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventTrigger",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "TriggerId"
+  ],
+  "columns": [
+    {
+      "field": "EventId",
+      "type": "ref:Event",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "TriggerId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "TriggerType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=VillageDaySettled|VillageRecognitionRaised|VillageProjectCompleted|ExpeditionEventNodeReached|ExpeditionBattleResolved|ExpeditionReturned|ManualDebug"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "EventId": "evt_test_exp_ruined_shrine",
+      "TriggerId": "trg_test_exp_ruined_shrine_1",
+      "TriggerType": "ExpeditionEventNodeReached"
+    },
+    {
+      "EventId": "evt_test_village_temp_draft",
+      "TriggerId": "trg_test_village_temp_draft_1",
+      "TriggerType": "VillageRecognitionRaised"
+    }
+  ]
+}

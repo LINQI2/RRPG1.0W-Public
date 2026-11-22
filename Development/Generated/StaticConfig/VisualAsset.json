@@ -1,0 +1,117 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "cfdd79b17c9ab6bf86ca89a2ad1a249a5a888bbea2ada1fcd08c730221ab744f",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_VisualAssets.xlsx",
+    "sheet": "VisualAsset",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "VisualAssetId"
+  ],
+  "columns": [
+    {
+      "field": "ImportPreset",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=sprite_point_100"
+      ]
+    },
+    {
+      "field": "SourceFile",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "VisualAssetId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    }
+  ],
+  "rowCount": 14,
+  "rows": [
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Enemy/enemy_mon_001.png",
+      "VisualAssetId": "va_enemy_mon_001"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Enemy/enemy_mon_002.png",
+      "VisualAssetId": "va_enemy_mon_002"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Enemy/enemy_mon_003.png",
+      "VisualAssetId": "va_enemy_mon_003"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Enemy/enemy_mon_004.png",
+      "VisualAssetId": "va_enemy_mon_004"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Enemy/enemy_mon_005.png",
+      "VisualAssetId": "va_enemy_mon_005"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Enemy/enemy_mon_006.png",
+      "VisualAssetId": "va_enemy_mon_006"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/farm-proof.png",
+      "VisualAssetId": "va_village_farm_basic"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/farm-proof-b.png",
+      "VisualAssetId": "va_village_farm_visual_b"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/neutral_marker.png",
+      "VisualAssetId": "va_village_neutral_marker"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/R2Prototype/farm.png",
+      "VisualAssetId": "va_village_r2_farm"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/R2Prototype/home.png",
+      "VisualAssetId": "va_village_r2_home"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/R2Prototype/kitchen.png",
+      "VisualAssetId": "va_village_r2_kitchen"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/R2Prototype/person.png",
+      "VisualAssetId": "va_village_r2_person"
+    },
+    {
+      "ImportPreset": "sprite_point_100",
+      "SourceFile": "Village/R2Prototype/workshop.png",
+      "VisualAssetId": "va_village_r2_workshop"
+    }
+  ]
+}

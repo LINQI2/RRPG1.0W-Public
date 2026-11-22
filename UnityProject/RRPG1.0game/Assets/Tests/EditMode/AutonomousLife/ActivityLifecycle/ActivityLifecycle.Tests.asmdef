@@ -1,0 +1,19 @@
+{
+    "name": "ActivityLifecycle.Tests",
+    "references": [
+        "AutonomousActivity.Runtime",
+        "Village.Runtime",
+        "Social.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

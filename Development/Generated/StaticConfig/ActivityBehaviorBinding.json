@@ -1,0 +1,90 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "e3aaaef979801c5caac5b96bd97f145ba0df9c5216f1aad9ef628a2990e87754",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "ActivityBehaviorBinding",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "BindingId"
+  ],
+  "columns": [
+    {
+      "field": "ActivityType",
+      "type": "ref:Activity",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "BindingId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Direction",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=-1",
+        "<=1"
+      ]
+    },
+    {
+      "field": "Key",
+      "type": "ref:BehaviorChannel",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Strength",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Weak|Medium|Strong"
+      ]
+    }
+  ],
+  "rowCount": 4,
+  "rows": [
+    {
+      "ActivityType": "Drink",
+      "BindingId": "drink.social",
+      "Direction": 1,
+      "Key": "social.sociability",
+      "Strength": "Weak"
+    },
+    {
+      "ActivityType": "Help",
+      "BindingId": "help.support",
+      "Direction": 1,
+      "Key": "social.supportiveness",
+      "Strength": "Medium"
+    },
+    {
+      "ActivityType": "Talk",
+      "BindingId": "talk.social",
+      "Direction": 1,
+      "Key": "social.sociability",
+      "Strength": "Medium"
+    },
+    {
+      "ActivityType": "VisitSick",
+      "BindingId": "visit.support",
+      "Direction": 1,
+      "Key": "social.supportiveness",
+      "Strength": "Medium"
+    }
+  ]
+}

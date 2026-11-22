@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    MIGRATION ONLY · M1 SHADOW TOOL · NOT PRODUCER AUTHORING PATH
+
+    职责（仅此一项）：
+        Development/Excel/Monster.csv        （Current Monster Authoring Authority）
+          → Development/Config/RRPG_Monsters.xlsx          （Shadow Candidate，确定性生成）
+          → Development/Config/RRPG_EnemyPresentation.xlsx （Shadow 骨架，数据为零）
+
+    硬约束：
+      [1] 不带任何正式 Authoring 语义：M2 Authority Cutover 之后本工具不得再拥有产品内容写入权。
+      [2] 不参与 validate / build 的制作人职责（那两个入口只读 XLSX + 写 Mirror）。
+      [3] 不修改 Monster.csv，不修改任何 SO / Runtime 代码。
+
+    用法（在本工程目录下执行）：
+        dotnet run sync          例如：在当前目录执行 dotnet run sync
+        dotnet run equivalence
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>rrpg-m1-shadow</AssemblyName>
+    <RootNamespace>RRPG.ConfigCompiler.M1ShadowSync</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.1.1" />
+    <PackageReference Include="System.IO.Packaging" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\RRPG.ConfigCompiler\RRPG.ConfigCompiler.csproj" />
+  </ItemGroup>
+
+</Project>
+

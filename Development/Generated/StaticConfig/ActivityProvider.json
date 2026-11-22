@@ -1,0 +1,109 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "01890a5a2d70a36cf018186fce2025284ea29f2e91decde6cb57f802a089e82e",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "ActivityProvider",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ProviderId"
+  ],
+  "columns": [
+    {
+      "field": "ActivityType",
+      "type": "ref:Activity",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "ContextDomain",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional",
+        "allowed=Person|TestContext"
+      ]
+    },
+    {
+      "field": "PlaceId",
+      "type": "ref:Place",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "ProviderId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "RequiredContextKey",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional",
+        "allowed=Target.InjurySeverity|Target.HelpNeedSeverity"
+      ]
+    },
+    {
+      "field": "RequiresTarget",
+      "type": "bool",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 5,
+  "rows": [
+    {
+      "ActivityType": "Drink",
+      "ContextDomain": null,
+      "PlaceId": "Tavern",
+      "ProviderId": "prototype.drink",
+      "RequiredContextKey": null,
+      "RequiresTarget": false
+    },
+    {
+      "ActivityType": "Help",
+      "ContextDomain": "TestContext",
+      "PlaceId": "Workshop",
+      "ProviderId": "prototype.help",
+      "RequiredContextKey": "Target.HelpNeedSeverity",
+      "RequiresTarget": true
+    },
+    {
+      "ActivityType": "Rest",
+      "ContextDomain": null,
+      "PlaceId": "Home",
+      "ProviderId": "prototype.rest",
+      "RequiredContextKey": null,
+      "RequiresTarget": false
+    },
+    {
+      "ActivityType": "Talk",
+      "ContextDomain": null,
+      "PlaceId": "Tavern",
+      "ProviderId": "prototype.talk",
+      "RequiredContextKey": null,
+      "RequiresTarget": true
+    },
+    {
+      "ActivityType": "VisitSick",
+      "ContextDomain": "Person",
+      "PlaceId": "Home",
+      "ProviderId": "prototype.visit",
+      "RequiredContextKey": "Target.InjurySeverity",
+      "RequiresTarget": true
+    }
+  ]
+}

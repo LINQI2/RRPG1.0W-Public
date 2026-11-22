@@ -1,0 +1,93 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "16c3a7c67e0e400933de62d6ae3780e67ca9d725f9852b5b4554d6486868f812",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "PersonBehavior",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ChannelId",
+    "PersonDefinitionId"
+  ],
+  "columns": [
+    {
+      "field": "ChannelId",
+      "type": "ref:BehaviorChannel",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "PersonDefinitionId",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "Value",
+      "type": "float",
+      "key": false,
+      "rules": [
+        ">=0",
+        "<=1"
+      ]
+    }
+  ],
+  "rowCount": 8,
+  "rows": [
+    {
+      "ChannelId": "social.sociability",
+      "PersonDefinitionId": "prototype.li_si",
+      "Value": 0.5
+    },
+    {
+      "ChannelId": "social.sociability",
+      "PersonDefinitionId": "prototype.wang_wu",
+      "Value": 0.8
+    },
+    {
+      "ChannelId": "social.sociability",
+      "PersonDefinitionId": "prototype.zhang_san",
+      "Value": 0.8
+    },
+    {
+      "ChannelId": "social.sociability",
+      "PersonDefinitionId": "prototype.zhao_liu",
+      "Value": 0.2
+    },
+    {
+      "ChannelId": "social.supportiveness",
+      "PersonDefinitionId": "prototype.li_si",
+      "Value": 0.5
+    },
+    {
+      "ChannelId": "social.supportiveness",
+      "PersonDefinitionId": "prototype.wang_wu",
+      "Value": 0.2
+    },
+    {
+      "ChannelId": "social.supportiveness",
+      "PersonDefinitionId": "prototype.zhang_san",
+      "Value": 0.8
+    },
+    {
+      "ChannelId": "social.supportiveness",
+      "PersonDefinitionId": "prototype.zhao_liu",
+      "Value": 0.8
+    }
+  ]
+}

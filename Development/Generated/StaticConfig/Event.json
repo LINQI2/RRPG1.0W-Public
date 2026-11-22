@@ -1,0 +1,97 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "b945e02f6a494ba01ffdd03470ca57e83b5d3803ea28c3eac9efb5ff49317d95",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "Event",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "EventId"
+  ],
+  "columns": [
+    {
+      "field": "CooldownType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=None|VillageDays|ExpeditionNodes"
+      ]
+    },
+    {
+      "field": "CooldownValue",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    },
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Enabled",
+      "type": "bool",
+      "key": false,
+      "rules": [
+        "default=false"
+      ]
+    },
+    {
+      "field": "EventId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "RepeatPolicy",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=Repeatable|OncePerExpedition|OncePerWorld"
+      ]
+    },
+    {
+      "field": "Weight",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "CooldownType": "None",
+      "CooldownValue": 0,
+      "DisplayName": "测试·废弃神龛（远征）",
+      "Enabled": true,
+      "EventId": "evt_test_exp_ruined_shrine",
+      "RepeatPolicy": "Repeatable",
+      "Weight": 100
+    },
+    {
+      "CooldownType": "None",
+      "CooldownValue": 0,
+      "DisplayName": "测试·临时草案积累（村庄）",
+      "Enabled": true,
+      "EventId": "evt_test_village_temp_draft",
+      "RepeatPolicy": "Repeatable",
+      "Weight": 100
+    }
+  ]
+}

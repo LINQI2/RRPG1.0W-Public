@@ -1,0 +1,59 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "d7ff4afbf81011a6e72dba23aab7c0111eec0cc31eba6524b70fb226790321a8",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "PersonPreference",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "PersonDefinitionId",
+    "PreferenceKey"
+  ],
+  "columns": [
+    {
+      "field": "PersonDefinitionId",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "PreferenceKey",
+      "type": "string",
+      "key": true,
+      "rules": [
+        "key",
+        "allowed=leisure.drink"
+      ]
+    },
+    {
+      "field": "Value",
+      "type": "float",
+      "key": false,
+      "rules": [
+        ">=-1",
+        "<=1"
+      ]
+    }
+  ],
+  "rowCount": 1,
+  "rows": [
+    {
+      "PersonDefinitionId": "prototype.wang_wu",
+      "PreferenceKey": "leisure.drink",
+      "Value": 1
+    }
+  ]
+}

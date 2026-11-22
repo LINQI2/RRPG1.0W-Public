@@ -1,0 +1,116 @@
+# Unity project .gitignore
+# Unity 2022.3 LTS / Tuanjie compatible
+
+# Unity generated directories
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Unity generated files
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+sysinfo.txt
+
+# Crash/debug output
+*.stackdump
+
+# IDE generated files
+*.csproj
+# Exception: repository-maintained .NET tool projects must be committable
+# (Unity / IDE auto-generated *.csproj elsewhere stay ignored)
+!Tools/**/*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.sln.docstates
+*.unityproj
+*.vcxproj
+*.vcxproj.filters
+*.pidb.meta
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Visual Studio Code local settings
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Local/generated tool files
+UnityProject/RRPG1.0game/.com-unity-codely.json
+UnityProject/RRPG1.0game/Packages/manifest.json.bak
+UnityProject/RRPG1.0game/screenshots/
+
+# Keep Unity project source/config visible to git
+!UnityProject/RRPG1.0game/Assets/
+!UnityProject/RRPG1.0game/Packages/
+!UnityProject/RRPG1.0game/ProjectSettings/
+# ==============================
+# Local AI / IDE cache
+# ==============================
+
+UnityProject/RRPG1.0game/.codely-cli/
+UnityProject/RRPG1.0game/.vs/
+
+# ==============================
+# Optional Unity sample content
+# ==============================
+
+UnityProject/RRPG1.0game/Assets/TextMesh Pro/Examples & Extras/
+# ==============================
+# TextMesh Pro optional content
+# ==============================
+
+UnityProject/RRPG1.0game/Assets/TextMesh Pro/Documentation/
+UnityProject/RRPG1.0game/Assets/TextMesh Pro/Documentation.meta
+UnityProject/RRPG1.0game/Assets/TextMesh Pro/Examples & Extras/
+UnityProject/RRPG1.0game/Assets/TextMesh Pro/Examples & Extras.meta
+
+# ==============================
+# RRPG Static Configuration（FDS §3.1 / §8.2）
+# ==============================
+
+# Generated Unity Runtime Artifacts（Migration V0.1 决策：不进 Git）。
+# 唯一生成根，由 Unity Builder 重建（exact Resources.Load 加载，见 FDS §3.3）。
+# 精确路径：只忽略本系统生成根，不影响 Assets/Generated/ 下未来其它系统。
+UnityProject/RRPG1.0game/Assets/Generated/StaticConfig/**
+UnityProject/RRPG1.0game/Assets/Generated/StaticConfig.meta
+# 该父目录当前**只有**被忽略的生成根，因此其文件夹 meta 也属生成物噪声。
+# 未来若在其下引入受版本管理的系统，应删除本行并在那时提交该 meta。
+UnityProject/RRPG1.0game/Assets/Generated.meta
+
+# Config Compiler 本地构建状态（不是正式配置产物）
+Tools/RRPG.ConfigCompiler/.build-state/
+Tools/RRPG.ConfigCompiler/.build-tmp/
+Tools/RRPG.ConfigCompiler/**/bin/
+Tools/RRPG.ConfigCompiler/**/obj/
+
+# Producer 本机配置（编辑器路径等：属于机器环境，不是仓库配置）
+Tools/RRPG.ConfigCompiler/Producer/editor-path.local.txt

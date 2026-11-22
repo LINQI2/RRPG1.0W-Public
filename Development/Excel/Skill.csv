@@ -1,0 +1,6 @@
+﻿SkillId,Name,Trigger,CostActionPoints,SkillRange,EffectType_1,Value_1,TargetRule_1,StatusId_1,EffectType_2,Value_2,TargetRule_2,StatusId_2
+sk_001,劈砍,Active,1,1,Damage,8,Single,,,
+sk_002,治疗,Active,1,1,Heal,6,Self,,,
+sk_003,鼓舞,TurnStart,0,1,AddAttack,2,AdjacentAlly,,,
+sk_004,火球术,Active,1,1,Damage,12,Single,,,
+sk_005_shield_bash,盾击,Active,1,1,Damage,4,Single,,AddBuff,1,Single,status_stun

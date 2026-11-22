@@ -1,0 +1,107 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "06cf06ed27a5fc05685ed7c1a7da72bb59fd51ad83684e5d7d08eaa87ab08697",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "AutonomousLifeCalibration",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "CalibrationKey"
+  ],
+  "columns": [
+    {
+      "field": "CalibrationKey",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Value",
+      "type": "float",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 17,
+  "rows": [
+    {
+      "CalibrationKey": "BehaviorBudget",
+      "Value": 15
+    },
+    {
+      "CalibrationKey": "ContextBudget",
+      "Value": 40
+    },
+    {
+      "CalibrationKey": "InjuryDisabled",
+      "Value": 1
+    },
+    {
+      "CalibrationKey": "InjuryHeavy",
+      "Value": 1
+    },
+    {
+      "CalibrationKey": "InjuryLight",
+      "Value": 0.25
+    },
+    {
+      "CalibrationKey": "Medium",
+      "Value": 0.65
+    },
+    {
+      "CalibrationKey": "NoMajorWeight",
+      "Value": 0.75
+    },
+    {
+      "CalibrationKey": "PreferenceBudget",
+      "Value": 20
+    },
+    {
+      "CalibrationKey": "RelationshipBudget",
+      "Value": 25
+    },
+    {
+      "CalibrationKey": "RelationshipReferenceMagnitude",
+      "Value": 20
+    },
+    {
+      "CalibrationKey": "RepetitionBudget",
+      "Value": 25
+    },
+    {
+      "CalibrationKey": "Strong",
+      "Value": 1
+    },
+    {
+      "CalibrationKey": "Threshold",
+      "Value": 15
+    },
+    {
+      "CalibrationKey": "Weak",
+      "Value": 0.35
+    },
+    {
+      "CalibrationKey": "WeightGain",
+      "Value": 4
+    },
+    {
+      "CalibrationKey": "WeightPower",
+      "Value": 1.5
+    },
+    {
+      "CalibrationKey": "WeightSpan",
+      "Value": 60
+    }
+  ]
+}

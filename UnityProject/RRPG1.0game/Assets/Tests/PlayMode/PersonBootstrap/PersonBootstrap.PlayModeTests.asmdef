@@ -1,0 +1,26 @@
+{
+    "name": "PersonBootstrap.PlayModeTests",
+    "rootNamespace": "",
+    "references": [
+        "Person.Runtime",
+        "Profession.Runtime",
+        "Growth.Runtime",
+        "Village.Runtime",
+        "BattleStage1.Runtime",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

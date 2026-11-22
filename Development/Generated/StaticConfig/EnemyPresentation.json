@@ -1,0 +1,65 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "e769b17e26ea6f294d22987782ac40210ddc8a770e52da401507170d40175c3c",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_EnemyPresentation.xlsx",
+    "sheet": "EnemyPresentation",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "MonsterId"
+  ],
+  "columns": [
+    {
+      "field": "MonsterId",
+      "type": "ref:Monster",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "VisualAssetId",
+      "type": "ref:VisualAsset",
+      "key": false,
+      "rules": []
+    }
+  ],
+  "rowCount": 6,
+  "rows": [
+    {
+      "MonsterId": "mon_001",
+      "VisualAssetId": "va_enemy_mon_001"
+    },
+    {
+      "MonsterId": "mon_002",
+      "VisualAssetId": "va_enemy_mon_002"
+    },
+    {
+      "MonsterId": "mon_003",
+      "VisualAssetId": "va_enemy_mon_003"
+    },
+    {
+      "MonsterId": "mon_004",
+      "VisualAssetId": "va_enemy_mon_004"
+    },
+    {
+      "MonsterId": "mon_005",
+      "VisualAssetId": "va_enemy_mon_005"
+    },
+    {
+      "MonsterId": "mon_006",
+      "VisualAssetId": "va_enemy_mon_006"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+# Normalize text files for stable diffs across Windows/macOS/Linux
+* text=auto
+
+# Unity text assets
+*.cs text diff=csharp
+*.shader text
+*.cginc text
+*.compute text
+*.asmdef text
+*.asmref text
+*.json text
+*.xml text
+*.txt text
+*.md text
+*.csv text
+*.yml text
+*.yaml text
+*.asset text
+*.prefab text
+*.unity text
+*.mat text
+*.meta text
+*.controller text
+*.anim text
+*.overrideController text
+*.playable text
+*.preset text
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.tga binary
+*.psd binary
+*.fbx binary
+*.blend binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.mp4 binary
+*.mov binary
+*.ttf binary
+*.otf binary
+*.dll binary
+*.exe binary
+
+# Producer authoring workbook (D-019: XLSX = Authoring Authority; never text-normalized)
+*.xlsx binary
+
+# RRPG Static Configuration — Canonical Mirror（FDS §7.3）
+# path-specific：只对正式 Generated 路径强制 LF，保证跨平台逐字节确定性。
+# 不修改全仓 *.json 策略（FDS §18 N11）。
+Development/Generated/StaticConfig/*.json text eol=lf

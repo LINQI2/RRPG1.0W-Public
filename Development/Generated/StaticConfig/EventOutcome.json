@@ -1,0 +1,97 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "fafb7c67bb09ae739f509f3a920ac39b4815ae79ef5e3e6840ba56f01e4c2338",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventOutcome",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "OutcomeId"
+  ],
+  "columns": [
+    {
+      "field": "OptionId",
+      "type": "ref:EventOption",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "OutcomeId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "ResultTextTemplate",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "Weight",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    }
+  ],
+  "rowCount": 7,
+  "rows": [
+    {
+      "OptionId": "opt_test_exp_force",
+      "OutcomeId": "out_test_exp_force",
+      "ResultTextTemplate": "清理引来守卫：准备战斗。",
+      "Weight": 100
+    },
+    {
+      "OptionId": "opt_test_exp_investigate",
+      "OutcomeId": "out_test_exp_investigate_bad",
+      "ResultTextTemplate": null,
+      "Weight": 30
+    },
+    {
+      "OptionId": "opt_test_exp_investigate",
+      "OutcomeId": "out_test_exp_investigate_ok",
+      "ResultTextTemplate": null,
+      "Weight": 70
+    },
+    {
+      "OptionId": "opt_test_exp_leave",
+      "OutcomeId": "out_test_exp_leave",
+      "ResultTextTemplate": null,
+      "Weight": 100
+    },
+    {
+      "OptionId": "opt_test_exp_store",
+      "OutcomeId": "out_test_exp_store",
+      "ResultTextTemplate": "队伍整理物资：补给 +2，但多耗 1 天。",
+      "Weight": 100
+    },
+    {
+      "OptionId": "opt_test_village_continue",
+      "OutcomeId": "out_test_village_continue",
+      "ResultTextTemplate": null,
+      "Weight": 100
+    },
+    {
+      "OptionId": "opt_test_village_grant_rest",
+      "OutcomeId": "out_test_village_grant_rest",
+      "ResultTextTemplate": null,
+      "Weight": 100
+    }
+  ]
+}

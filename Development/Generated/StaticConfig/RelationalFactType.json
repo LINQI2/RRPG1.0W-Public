@@ -1,0 +1,47 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "5204531e48031d89896c9158a8d7ca19b23a0c177e9c3214b6d23ee01174c06f",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Social.xlsx",
+    "sheet": "RelationalFactType",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "FactType"
+  ],
+  "columns": [
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "FactType",
+      "type": "id",
+      "key": true,
+      "rules": []
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "DisplayName": "帮助人物",
+      "FactType": "relational.helped_person"
+    },
+    {
+      "DisplayName": "探望病人",
+      "FactType": "relational.visited_sick_person"
+    }
+  ]
+}

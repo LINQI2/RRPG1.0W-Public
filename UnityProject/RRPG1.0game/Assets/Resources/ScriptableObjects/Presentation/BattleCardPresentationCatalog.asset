@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1870814ab9c02b14fa6cfe7e28756e1d, type: 3}
+  m_Name: BattleCardPresentationCatalog
+  m_EditorClassIdentifier: 
+  entries:
+  - TemplateId: bcard_break_poise
+    ArtSprite: {fileID: 0}
+    DescriptionTemplate: "\u5BF9\u76EE\u6807\u9020\u6210 <b>{step:0.value}</b> \u70B9
+      <link=\"keyword:damage\">\u4F24\u5BB3</link>\u3002\u76EE\u6807 Intent \u4E3A\u9632\u5FA1\u65F6\uFF0C\u989D\u5916\u9020\u6210
+      <b>{step:0.bonus}</b> \u70B9\u4F24\u5BB3\u3002"
+  - TemplateId: bcard_solo_hunt
+    ArtSprite: {fileID: 0}
+    DescriptionTemplate: "\u5BF9\u76EE\u6807\u9020\u6210 <b>{step:0.value}</b> \u70B9
+      <link=\"keyword:damage\">\u4F24\u5BB3</link>\u3002\u724C\u4E3B\u5728\u672C\u6392\u72EC\u72FC\u65F6\uFF0C\u989D\u5916\u9020\u6210
+      <b>{step:0.bonus}</b> \u70B9\u4F24\u5BB3\u3002"
+  - TemplateId: bcard_finish_prey
+    ArtSprite: {fileID: 0}
+    DescriptionTemplate: "\u5BF9\u76EE\u6807\u9020\u6210 <b>{step:0.value}</b> \u70B9
+      <link=\"keyword:damage\">\u4F24\u5BB3</link>\u3002\u76EE\u6807\u751F\u547D\u7B26\u5408\u6536\u5272\u6761\u4EF6\u65F6\uFF0C\u989D\u5916\u9020\u6210
+      <b>{step:0.bonus}</b> \u70B9\u4F24\u5BB3\u3002"

@@ -1,0 +1,5 @@
+﻿CardId,DisplayName,CostTP,EffectType_1,Value_1,TargetRule_1,StatusId_1,TargetType
+icard_001,治疗药水,1,Heal,8,Self,,Ally
+icard_002,炸药,2,Damage,12,Single,,Enemy
+icard_003,酒,1,AddBuff,0,Self,status_tipsy,Ally
+icard_004_smoke_bomb,烟雾弹,1,AddBuff,0,Single,status_stun,Enemy

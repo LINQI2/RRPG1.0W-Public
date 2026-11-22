@@ -1,0 +1,127 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "beefdccda65d8e98536a18eea54b459aeffbe405713479f9119a9889b7c628a2",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Events.xlsx",
+    "sheet": "EventCondition",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ConditionId"
+  ],
+  "columns": [
+    {
+      "field": "ConditionId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "ConditionType",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "allowed=ContextStringEquals|ContextIntAtLeast|ContextIntAtMost|FlagSet|FlagNotSet|EventNotSeen|EventSeenCountAtLeast|PersonExists|PersonInVillage|PersonOnExpedition|PersonAvailable|VillageResourceAtLeast|VillageResourceAtMost|ExpeditionDepthAtLeast|ExpeditionDepthAtMost|SupplyAtLeast|SupplyAtMost|PartySizeAtLeast|PartySizeAtMost"
+      ]
+    },
+    {
+      "field": "EventId",
+      "type": "ref:Event",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "GroupId",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    },
+    {
+      "field": "IntValue",
+      "type": "int",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "StringValue",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "SubjectRoleId",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    },
+    {
+      "field": "TargetKey",
+      "type": "string",
+      "key": false,
+      "rules": [
+        "optional"
+      ]
+    }
+  ],
+  "rowCount": 4,
+  "rows": [
+    {
+      "ConditionId": "cond_test_exp_depth",
+      "ConditionType": "ExpeditionDepthAtLeast",
+      "EventId": "evt_test_exp_ruined_shrine",
+      "GroupId": 1,
+      "IntValue": 0,
+      "StringValue": null,
+      "SubjectRoleId": null,
+      "TargetKey": null
+    },
+    {
+      "ConditionId": "cond_test_village_count_max",
+      "ConditionType": "ContextIntAtMost",
+      "EventId": "evt_test_village_temp_draft",
+      "GroupId": 1,
+      "IntValue": 3,
+      "StringValue": null,
+      "SubjectRoleId": null,
+      "TargetKey": "ObservedCount"
+    },
+    {
+      "ConditionId": "cond_test_village_count_min",
+      "ConditionType": "ContextIntAtLeast",
+      "EventId": "evt_test_village_temp_draft",
+      "GroupId": 1,
+      "IntValue": 3,
+      "StringValue": null,
+      "SubjectRoleId": null,
+      "TargetKey": "ObservedCount"
+    },
+    {
+      "ConditionId": "cond_test_village_recognition",
+      "ConditionType": "ContextStringEquals",
+      "EventId": "evt_test_village_temp_draft",
+      "GroupId": 1,
+      "IntValue": null,
+      "StringValue": "TemporaryDraftBuildup",
+      "SubjectRoleId": null,
+      "TargetKey": "RecognitionType"
+    }
+  ]
+}

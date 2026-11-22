@@ -1,0 +1,25 @@
+{
+    "name": "VillageStage1.Tests",
+    "rootNamespace": "",
+    "references": [
+        "Village.Runtime",
+        "StaticConfig.Runtime",
+        "Assembly-CSharp-Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

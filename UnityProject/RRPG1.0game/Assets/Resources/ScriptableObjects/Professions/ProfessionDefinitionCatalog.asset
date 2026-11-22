@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:yousandi.cn,2023:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1a7923be539a43ac72ee83167a765, type: 3}
+  m_Name: ProfessionDefinitionCatalog
+  m_EditorClassIdentifier: 
+  Definitions:
+  - ProfessionId: profession_test_a
+    FullCardPool:
+    - bcard_aim
+    - bcard_sword
+    - bcard_heal
+    - bcard_rally
+    - bcard_lend_hand
+    - bcard_fill_gap
+    - bcard_swap_post
+    InitialUnlockedCards:
+    - bcard_sword
+    - bcard_heal
+    - bcard_lend_hand
+    - bcard_fill_gap
+    - bcard_swap_post
+    InitialStarterBuild:
+    - CardId: bcard_lend_hand
+      Proficiency: 1
+    - CardId: bcard_fill_gap
+      Proficiency: 1
+    - CardId: bcard_swap_post
+      Proficiency: 1
+    ProfessionTraitId: trait_profession_test_a
+  - ProfessionId: profession_test_b
+    FullCardPool:
+    - bcard_aim
+    - bcard_sword
+    - bcard_heal
+    - bcard_rally
+    InitialUnlockedCards:
+    - bcard_sword
+    - bcard_heal
+    InitialStarterBuild:
+    - CardId: bcard_sword
+      Proficiency: 1
+    - CardId: bcard_heal
+      Proficiency: 1
+    ProfessionTraitId: trait_profession_test_b
+  - ProfessionId: profession_test_c
+    FullCardPool:
+    - bcard_aim
+    - bcard_sword
+    - bcard_heal
+    - bcard_rally
+    - bcard_stoke_fire
+    - bcard_prep_cut
+    - bcard_share_meal
+    InitialUnlockedCards:
+    - bcard_aim
+    - bcard_sword
+    - bcard_stoke_fire
+    - bcard_prep_cut
+    - bcard_share_meal
+    InitialStarterBuild:
+    - CardId: bcard_stoke_fire
+      Proficiency: 1
+    - CardId: bcard_prep_cut
+      Proficiency: 1
+    - CardId: bcard_share_meal
+      Proficiency: 1
+    ProfessionTraitId: trait_profession_test_c
+  - ProfessionId: profession_test_d
+    FullCardPool:
+    - bcard_aim
+    - bcard_sword
+    - bcard_heal
+    - bcard_rally
+    InitialUnlockedCards:
+    - bcard_sword
+    InitialStarterBuild:
+    - CardId: bcard_sword
+      Proficiency: 1
+    ProfessionTraitId: trait_profession_test_d
+  - ProfessionId: profession_test_e
+    FullCardPool:
+    - bcard_aim
+    - bcard_sword
+    - bcard_heal
+    - bcard_rally
+    - bcard_finish_prey
+    - bcard_break_poise
+    - bcard_solo_hunt
+    InitialUnlockedCards:
+    - bcard_heal
+    - bcard_sword
+    - bcard_finish_prey
+    - bcard_break_poise
+    - bcard_solo_hunt
+    InitialStarterBuild:
+    - CardId: bcard_finish_prey
+      Proficiency: 1
+    - CardId: bcard_break_poise
+      Proficiency: 1
+    - CardId: bcard_solo_hunt
+      Proficiency: 1
+    ProfessionTraitId: trait_profession_test_e

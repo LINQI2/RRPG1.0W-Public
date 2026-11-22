@@ -1,0 +1,96 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "4eb954290f1f168027a4043590d1ca5896d5ba0df2c5a4a17ea95eb257252f58",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_Encounters.xlsx",
+    "sheet": "EncounterPoolEntry",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "EncounterId",
+    "PoolId"
+  ],
+  "columns": [
+    {
+      "field": "EncounterId",
+      "type": "ref:Encounter",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "MaxDepth",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    },
+    {
+      "field": "MinDepth",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=0"
+      ]
+    },
+    {
+      "field": "PoolId",
+      "type": "ref:EncounterPool",
+      "key": true,
+      "rules": [
+        "key"
+      ]
+    },
+    {
+      "field": "Weight",
+      "type": "int",
+      "key": false,
+      "rules": [
+        ">=1"
+      ]
+    }
+  ],
+  "rowCount": 4,
+  "rows": [
+    {
+      "EncounterId": "enc_test_basic",
+      "MaxDepth": 3,
+      "MinDepth": 0,
+      "PoolId": "pool_test_general",
+      "Weight": 100
+    },
+    {
+      "EncounterId": "enc_test_boss",
+      "MaxDepth": 99,
+      "MinDepth": 5,
+      "PoolId": "pool_test_deep",
+      "Weight": 10
+    },
+    {
+      "EncounterId": "enc_test_elite",
+      "MaxDepth": 99,
+      "MinDepth": 1,
+      "PoolId": "pool_test_general",
+      "Weight": 40
+    },
+    {
+      "EncounterId": "enc_test_exact_front",
+      "MaxDepth": 99,
+      "MinDepth": 1,
+      "PoolId": "pool_test_deep",
+      "Weight": 60
+    }
+  ]
+}

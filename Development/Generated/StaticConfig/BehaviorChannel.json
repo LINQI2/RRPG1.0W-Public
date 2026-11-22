@@ -1,0 +1,88 @@
+{
+  "_generated": {
+    "doNotEdit": true,
+    "tool": "RRPG.ConfigCompiler",
+    "formatVersion": "rrpg-static-config-mirror/1",
+    "sourceSha256": "503c0b79777424b7fefd909781d3c8e7371a0bfb43f8018384287b429370ed61",
+    "notice": "本文件由 RRPG ConfigCompiler 生成，禁止手工编辑；唯一人工 Authoring Authority 是 XLSX（Development/Config）。"
+  },
+  "irVersion": "rrpg-static-config-mirror/1",
+  "source": {
+    "workbook": "Config/RRPG_AutonomousLife.xlsx",
+    "sheet": "BehaviorChannel",
+    "machineFieldRow": 1,
+    "typeRow": 2,
+    "ruleRow": 3,
+    "displayHeaderRow": 4,
+    "firstDataRow": 5
+  },
+  "key": [
+    "ChannelId"
+  ],
+  "columns": [
+    {
+      "field": "ChannelId",
+      "type": "id",
+      "key": true,
+      "rules": []
+    },
+    {
+      "field": "Description",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "DisplayName",
+      "type": "string",
+      "key": false,
+      "rules": []
+    },
+    {
+      "field": "Max",
+      "type": "float",
+      "key": false,
+      "rules": [
+        ">=0",
+        "<=1"
+      ]
+    },
+    {
+      "field": "Min",
+      "type": "float",
+      "key": false,
+      "rules": [
+        ">=0",
+        "<=1"
+      ]
+    },
+    {
+      "field": "NeutralValue",
+      "type": "float",
+      "key": false,
+      "rules": [
+        ">=0",
+        "<=1"
+      ]
+    }
+  ],
+  "rowCount": 2,
+  "rows": [
+    {
+      "ChannelId": "social.sociability",
+      "Description": "主动进行社交的测试倾向",
+      "DisplayName": "社交主动倾向",
+      "Max": 1,
+      "Min": 0,
+      "NeutralValue": 0.5
+    },
+    {
+      "ChannelId": "social.supportiveness",
+      "Description": "对他人需要的测试响应倾向",
+      "DisplayName": "支持响应倾向",
+      "Max": 1,
+      "Min": 0,
+      "NeutralValue": 0.5
+    }
+  ]
+}
